@@ -1,0 +1,100 @@
+{
+  "total_rows_raw_deduped": 4853,
+  "excluded_noise_rows": 178,
+  "excluded_noise_files": 178,
+  "excluded_noise_pct_of_corpus_files": 11.6,
+  "published_register_rows": 4675,
+  "no_findings_rows": 269,
+  "real_finding_rows": 4406,
+  "unique_entities_in_register": 562,
+  "unique_source_files_in_register": 1361,
+  "financial_years_covered": [
+    "2015/2016",
+    "2016/2017",
+    "2017/2018",
+    "2018/2019",
+    "2019/2020",
+    "2020/2021",
+    "2021/2022",
+    "2022/2023",
+    "2023/2024"
+  ],
+  "fy_range": "2015/2016 - 2023/2024",
+  "sins_pillar_counts_real_rows": {
+    "Other": 4194,
+    "Systems": 134,
+    "Infrastructure": 59,
+    "Security": 36,
+    "Network": 22
+  },
+  "sins_pillar_pct_real_rows": {
+    "Other": 95.2,
+    "Systems": 3.0,
+    "Infrastructure": 1.3,
+    "Security": 0.8,
+    "Network": 0.5
+  },
+  "prior_year_reference_rate_pct": 19.8,
+  "top_15_entities_by_finding_count": [
+    [
+      "NATIONAL SOCIAL SECURITY FUND",
+      50
+    ],
+    [
+      "KENYA PIPELINE COMPANY LIMITED",
+      44
+    ],
+    [
+      "WESTERN KENYA RICE MILLS LIMITED",
+      43
+    ],
+    [
+      "KENYA SCHOOL OF GOVERNMENT",
+      42
+    ],
+    [
+      "TANA AND ATHI RIVERS DEVELOPMENT AUTHORITY",
+      41
+    ],
+    [
+      "SCHOOL EQUIPMENT PRODUCTION UNIT",
+      39
+    ],
+    [
+      "WATER SERVICES REGULATORY BOARD",
+      39
+    ],
+    [
+      "KENYA FOREST SERVICE",
+      38
+    ],
+    [
+      "KENYA WATER INSTITUTE",
+      36
+    ],
+    [
+      "SOUTH NYANZA SUGAR COMPANY LIMITED",
+      36
+    ],
+    [
+      "KENYA NATIONAL SHIPPING LINE LIMITED",
+      35
+    ],
+    [
+      "NATIONAL MUSEUMS OF KENYA",
+      35
+    ],
+    [
+      "KENYATTA INTERNATIONAL CONVENTION CENTRE",
+      34
+    ],
+    [
+      "CHILD WELFARE SOCIETY OF KENYA",
+      33
+    ],
+    [
+      "KENYATTA NATIONAL HOSPITAL",
+      33
+    ]
+  ]
+}
