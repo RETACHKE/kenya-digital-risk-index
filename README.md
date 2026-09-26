@@ -2,7 +2,7 @@
 
 **The empirical backbone of RETACH's Cyber Risk Quantification (CRQ) Engine.**
 
-Audit findings extracted from all 1,554 public Office of the Auditor-General (Kenya) reports, tagged to RETACH's S.I.N.S. Framework™ (Systems, Infrastructure, Network, Security) and aligned to ISO 27005 and NIST CSF.
+Audit findings extracted from 1,361 public Office of the Auditor-General (Kenya) reports, tagged to RETACH's S.I.N.S. Framework™ (Systems, Infrastructure, Network, Security) and aligned to ISO 27005 and NIST CSF.
 
 Live site: **[kdri.retach.ke](https://kdri.retach.ke)**
 Company: **[retach.tech](https://retach.tech)**
