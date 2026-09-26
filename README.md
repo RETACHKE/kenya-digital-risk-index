@@ -37,9 +37,10 @@ Only 18 of the 458 recurring issue-threads tag to an actual S.I.N.S. pillar — 
 
 ## What's in this repo
 
-- `kenya-digital-risk-index.html` — the standalone public site (also live at retach.ke / retach.tech)
-- `Kenya_Digital_Risk_Index_Methodology.docx` — full methodology: extraction approach, patch history, ISO 27005 / NIST CSF alignment, and an actuarial honesty banner
+- `index.html` — the standalone public site (live at kdri.retach.ke)
+- `methodology.html` — full methodology & citation page: extraction approach, patch history, ISO 27005 / NIST CSF alignment, recurrence method, entity tiers, and how to cite this dataset
 - `register_public_v38_stats.json` — the aggregate statistics behind every number above and on the site
+- `kenya-digital-risk-index.html` — legacy redirect stub to `/` (kept for old inbound links)
 
 ## What's *not* in this repo, and why
 
