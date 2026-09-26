@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kenya Digital Risk Index | RETACH Digital</title>
-<meta name="description" content="RETACH Digital's Kenya Digital Risk Index — 4,675 audit findings extracted from 1,554 OAG Kenya reports, mapped to the S.I.N.S. Framework™ and aligned to ISO 27005 / NIST CSF. The empirical backbone of RETACH's Cyber Risk Quantification Engine.">
+<meta name="description" content="RETACH Digital's Kenya Digital Risk Index — 4,406 audit findings from 1,361 OAG Kenya reports, mapped to the S.I.N.S. Framework™ and aligned to ISO 27005 / NIST CSF. The empirical backbone of RETACH's Cyber Risk Quantification Engine.">
 <meta name="theme-color" content="#146B4E">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -94,6 +94,8 @@
   .pillar-track { background:var(--gray-light); border:1px solid var(--gray-border); height:14px; border-radius:2px; overflow:hidden; }
   .pillar-fill { height:100%; background:var(--red); }
   .pillar-note { font-size:13px; color:var(--gray-mid); margin-top:6px; }
+  .pillar-summary { font-size:15px; line-height:1.55; margin:0 0 22px; max-width:760px; }
+  .pillar-summary strong { font-family:'Space Grotesk',sans-serif; font-size:22px; color:var(--green); }
   .risk-num { color:var(--red); }
 
   /* PATCH TABLE */
@@ -166,7 +168,7 @@
   <div class="hero-inner">
     <div class="eyebrow">OAG Kenya Findings Corpus &middot; S.I.N.S. Framework&trade;</div>
     <h1>Kenya Digital<br><span class="accent">Risk Index</span></h1>
-    <p class="hero-sub">4,675 audit findings extracted from 1,554 public Office of the Auditor-General reports, mapped to the S.I.N.S. Framework&trade; and aligned to ISO 27005 / NIST CSF. The empirical backbone of RETACH's Cyber Risk Quantification Engine &mdash; built from real, cited government audit evidence, not survey data.</p>
+    <p class="hero-sub">4,406 audit findings from 1,361 public Office of the Auditor-General reports, mapped to the S.I.N.S. Framework&trade; and aligned to ISO 27005 / NIST CSF. The empirical backbone of RETACH's Cyber Risk Quantification Engine &mdash; built from real, cited government audit evidence, not survey data.</p>
     <div class="hero-stats" id="stats">
       <div class="stat"><span class="stat-num">4,675</span><span class="stat-label">Register Rows</span></div>
       <div class="stat"><span class="stat-num">562</span><span class="stat-label">Entities Covered</span></div>
@@ -182,6 +184,7 @@
   <h2>Where the risk<br>actually sits.</h2>
   <p class="section-lead">Every finding is tagged multi-label against RETACH's four pillars using curated, word-boundary-matched keyword sets. Most OAG findings are financial/governance in nature &mdash; the IT-relevant subset is smaller but consistent, and is exactly the layer RETACH's S.I.N.S. Framework&trade; is built to fix.</p>
 
+  <p class="pillar-summary"><strong class="num">212</strong> of 4,406 audit findings (4.8%) carry at least one S.I.N.S. digital-pillar tag. The pillar rows below add up to 251, not 212, because 33 of those findings are tagged to more than one pillar. Tags come from keyword matching, so read them as a signal, not a validated count.</p>
   <div class="pillar-list">
     <div class="pillar-row">
       <div class="pillar-top"><span class="pillar-name">Other (Financial / Governance)</span><span class="pillar-pct num">95.2% &middot; 4,194 rows</span></div>
@@ -251,7 +254,7 @@
     <tr><td>Privatization Commission</td><td>Systems</td><td>E-Procurement System Not Implemented</td><td class="num risk-num">2 audits running (2021/22&ndash;2022/23)</td></tr>
     <tr><td>Kenya Universities and Colleges Central Placement Service</td><td>Infrastructure</td><td>Unsupported ICT Server Procurement</td><td class="num risk-num">2 audits running (2018/19&ndash;2019/20)</td></tr>
   </table>
-  <p class="pillar-note" style="margin-top:10px;">Smaller n by design &mdash; S.I.N.S.-taggable findings are 4.8% of the corpus overall. The pattern (unresolved digital-risk gaps persisting audit after audit) is the point, not the count.</p>
+  <p class="pillar-note" style="margin-top:10px;">Smaller n by design &mdash; S.I.N.S.-taggable findings are 4.8% of the corpus overall (212 of 4,406). The pattern (unresolved digital-risk gaps persisting audit after audit) is the point, not the count.</p>
 </section>
 
 <section>

@@ -34,6 +34,9 @@
     "Security": 0.8,
     "Network": 0.5
   },
+  "digital_tagged_findings_unique": 212,
+  "digital_tagged_findings_pct_real_rows": 4.8,
+  "multi_pillar_findings": 33,
   "prior_year_reference_rate_pct": 19.8,
   "top_15_entities_by_finding_count": [
     [

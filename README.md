@@ -31,6 +31,8 @@ Company: **[retach.tech](https://retach.tech)**
 | Security | 0.8% | 36 |
 | Network | 0.5% | 22 |
 
+**212 unique findings (4.8% of 4,406) carry at least one digital-pillar tag.** The four digital pillar counts sum to 251 because 33 findings are tagged to more than one pillar. Tags come from keyword matching, not manual review.
+
 Only 18 of the 458 recurring issue-threads tag to an actual S.I.N.S. pillar — that subset (disaster-recovery, IT-governance, e-procurement, and ICT-procurement findings recurring across two audit cycles) is explicitly labeled small-by-design / proof-of-concept, not a validated prevalence rate.
 
 ## What's in this repo
