@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology &amp; Citation | Kenya Digital Risk Index | RETACH Digital</title>
+<meta name="description" content="Technical methodology for the Kenya Digital Risk Index: how 1,554 OAG Kenya reports became a 4,675-row register, how findings are split and tagged to the S.I.N.S. Framework™, how recurrence is measured, known limitations, QA, and how to cite the dataset.">
+<meta name="theme-color" content="#146B4E">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #146B4E;
+    --green-dark: #1e5e3e;
+    --green-light: #3a9b68;
+    --green-bg: #f0f8f4;
+    --black: #111315;
+    --off-white: #fafaf8;
+    --white: #ffffff;
+    --gray: #6b6b6b;
+    --gray-mid: #888888;
+    --gray-light: #f5f5f3;
+    --gray-border: #e0e0dc;
+    --red: #9b2335;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'IBM Plex Sans', sans-serif;
+    background:var(--off-white);
+    color:var(--black);
+    font-size:16px;
+    line-height:1.6;
+  }
+  a { color:inherit; }
+  .wrap { max-width:1200px; margin:0 auto; padding:0 4vw; }
+
+  /* NAV */
+  nav {
+    position:sticky; top:0; z-index:1000;
+    background:rgba(250,250,248,0.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--gray-border);
+    padding:0 4vw; height:92px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo { display:flex; align-items:center; gap:14px; text-decoration:none; }
+  .nav-logo-svg { height:46px; width:auto; display:block; }
+  .nav-tag { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--green); letter-spacing:0.05em; padding:4px 9px; border:1px solid var(--green); border-radius:2px; white-space:nowrap; }
+  @media (max-width:640px){ .nav-logo-svg{ height:34px; } .nav-tag{ display:none; } }
+  .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
+  .nav-links a { text-decoration:none; font-size:12px; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; color:var(--gray); transition:color .2s; }
+  .nav-links a:hover { color:var(--green); }
+  .nav-cta { background:var(--green); color:var(--white)!important; padding:10px 20px; border-radius:2px; transition:background .2s; }
+  .nav-cta:hover { background:var(--green-dark); }
+  @media (max-width:820px){ .nav-links{ display:none; } }
+
+  /* HERO */
+  .hero { background:var(--black); color:var(--white); padding:90px 4vw 70px; position:relative; overflow:hidden; }
+  .hero-pattern { position:absolute; inset:0; opacity:.05; background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,.4) 40px, rgba(255,255,255,.4) 41px),
+    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,.4) 40px, rgba(255,255,255,.4) 41px); }
+  .hero-inner { position:relative; z-index:1; max-width:1200px; margin:0 auto; }
+  .eyebrow { font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--green-light); margin-bottom:18px; display:flex; align-items:center; gap:10px; }
+  .eyebrow::before { content:''; width:28px; height:1px; background:var(--green-light); }
+  h1 { font-family:'Space Grotesk',sans-serif; font-weight:900; font-size:clamp(38px,6vw,66px); line-height:.98; text-transform:uppercase; letter-spacing:-.01em; margin-bottom:22px; max-width:820px; }
+  h1 .accent { color:var(--green-light); }
+  .hero-sub { font-size:17px; color:rgba(255,255,255,.7); max-width:640px; margin-bottom:44px; line-height:1.65; }
+  .hero-stats { display:flex; flex-wrap:wrap; gap:0; border-top:1px solid rgba(255,255,255,.15); padding-top:30px; }
+  .stat { flex:1; min-width:130px; padding-right:24px; border-right:1px solid rgba(255,255,255,.15); margin-right:24px; margin-bottom:16px; }
+  .stat:last-child { border-right:none; }
+  .stat-num { font-family:'Space Grotesk',sans-serif; font-weight:900; font-size:34px; color:var(--green-light); line-height:1; display:block; }
+  .stat-label { font-size:11px; color:rgba(255,255,255,.55); font-weight:500; letter-spacing:.05em; margin-top:6px; text-transform:uppercase; }
+
+  /* SECTIONS */
+  section { padding:80px 4vw; }
+  .section-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:var(--green); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+  .section-eyebrow::before { content:''; width:22px; height:1px; background:var(--green); }
+  h2 { font-family:'Space Grotesk',sans-serif; font-weight:900; font-size:clamp(28px,4vw,44px); text-transform:uppercase; line-height:.98; letter-spacing:.01em; margin-bottom:16px; }
+  .section-lead { font-size:16px; color:var(--gray); max-width:680px; line-height:1.65; margin-bottom:40px; }
+
+  /* PILLAR BARS */
+  .pillar-list { max-width:820px; }
+  .pillar-row { margin-bottom:22px; }
+  .pillar-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; }
+  .pillar-name { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; text-transform:uppercase; letter-spacing:.03em; }
+  .pillar-pct { font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--gray); }
+  .pillar-track { background:var(--gray-light); border:1px solid var(--gray-border); height:14px; border-radius:2px; overflow:hidden; }
+  .pillar-fill { height:100%; background:var(--red); }
+  .pillar-note { font-size:13px; color:var(--gray-mid); margin-top:6px; }
+  .pillar-summary { font-size:15px; line-height:1.55; margin:0 0 22px; max-width:760px; }
+  .pillar-summary strong { font-family:'Space Grotesk',sans-serif; font-size:22px; color:var(--green); }
+  .risk-num { color:var(--red); }
+
+  /* PATCH TABLE */
+  table { width:100%; border-collapse:collapse; margin-bottom:20px; }
+  th, td { text-align:left; padding:14px 16px; font-size:14px; border-bottom:1px solid var(--gray-border); }
+  th { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--white); background:var(--green); font-weight:500; }
+  tr:nth-child(even) td { background:var(--gray-light); }
+  .num { font-family:'IBM Plex Mono',monospace; }
+
+  /* CARDS (framework recap) */
+  .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:var(--gray-border); border:1px solid var(--gray-border); margin-top:10px; }
+  @media (max-width:900px){ .grid4{ grid-template-columns:repeat(2,1fr);} }
+  .fcard { background:var(--white); padding:24px 22px; }
+  .fletter { font-family:'Space Grotesk',sans-serif; font-weight:900; font-size:34px; color:var(--green); display:block; line-height:1; }
+  .fpillar { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin-top:6px; }
+  .fdesc { font-size:13px; color:var(--gray); margin-top:8px; line-height:1.5; }
+
+  /* LIMITATIONS CALLOUT */
+  .callout { background:var(--white); border:1px solid var(--gray-border); border-left:4px solid var(--red); padding:24px 28px; margin-bottom:16px; }
+  .callout-title { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; text-transform:uppercase; letter-spacing:.03em; margin-bottom:6px; color:var(--black); }
+  .callout p { font-size:14px; color:var(--gray); line-height:1.6; }
+  .honesty-banner { background:var(--green-bg); border:1px solid var(--green); padding:20px 26px; margin-bottom:36px; font-size:14px; color:var(--green-dark); }
+  .honesty-banner b { color:var(--black); }
+
+  /* CTA */
+  .cta-section { background:var(--black); color:var(--white); text-align:center; padding:90px 4vw; }
+  .cta-section h2 { color:var(--white); }
+  .cta-section .section-lead { color:rgba(255,255,255,.65); margin:0 auto 36px; }
+  .btn-primary { background:var(--green); color:var(--white); padding:16px 36px; font-family:'IBM Plex Sans',sans-serif; font-weight:700; font-size:13px; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; border-radius:2px; display:inline-block; margin:6px; transition:background .2s; }
+  .btn-primary:hover { background:var(--green-dark); }
+  .btn-ghost { border:1px solid rgba(255,255,255,.3); color:var(--white); padding:15px 34px; font-family:'IBM Plex Sans',sans-serif; font-weight:700; font-size:13px; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; border-radius:2px; display:inline-block; margin:6px; transition:border-color .2s; }
+  .btn-ghost:hover { border-color:var(--green-light); color:var(--green-light); }
+
+  /* FOOTER */
+  footer { background:var(--black); color:rgba(255,255,255,.5); padding:40px 4vw; font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; border-top:1px solid rgba(255,255,255,.1); }
+  footer a { color:rgba(255,255,255,.7); text-decoration:none; }
+  footer a:hover { color:var(--green-light); }
+</style>
+<style>
+  .doc-meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:2px; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.15); margin-top:10px; }
+  .doc-meta div { background:var(--black); padding:16px 18px; }
+  .doc-meta .k { font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--green-light); display:block; margin-bottom:6px; }
+  .doc-meta .v { font-size:14px; color:rgba(255,255,255,.85); }
+  .toc { list-style:none; columns:2; column-gap:40px; max-width:760px; }
+  .toc li { margin-bottom:8px; font-size:15px; break-inside:avoid; }
+  .toc a { color:var(--green-dark); text-decoration:none; }
+  .toc a:hover { text-decoration:underline; }
+  @media (max-width:640px){ .toc{ columns:1; } }
+  .table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin-bottom:20px; }
+  .table-wrap table { margin-bottom:0; min-width:520px; }
+  .prose { max-width:760px; }
+  .prose p { font-size:15px; color:var(--black); line-height:1.7; margin-bottom:16px; }
+  .prose ol, .prose ul { margin:0 0 18px 22px; font-size:15px; line-height:1.7; }
+  .prose li { margin-bottom:6px; }
+  code, .mono { font-family:'IBM Plex Mono',monospace; font-size:13px; background:var(--gray-light); border:1px solid var(--gray-border); padding:1px 5px; border-radius:2px; }
+  .cite-box { background:var(--white); border:1px solid var(--gray-border); border-left:4px solid var(--green); padding:22px 26px; font-family:'IBM Plex Mono',monospace; font-size:13px; line-height:1.7; max-width:760px; margin-bottom:16px; word-break:break-word; }
+  .back-link { display:inline-block; margin-top:8px; font-size:13px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:var(--green); text-decoration:none; }
+  .back-link:hover { color:var(--green-dark); }
+</style>
+<link rel="canonical" href="https://kdri.retach.ke/methodology.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RETACH Digital">
+<meta property="og:title" content="Methodology &amp; Citation | Kenya Digital Risk Index">
+<meta property="og:description" content="Technical methodology for the Kenya Digital Risk Index: how 1,554 OAG Kenya reports became a 4,675-row register, how findings are split and tagged to the S.I.N.S. Framework™, how recurrence is measured, known limitations, QA, and how to cite the dataset.">
+<meta property="og:url" content="https://kdri.retach.ke/methodology.html">
+<meta property="og:image" content="https://kdri.retach.ke/favicon-512.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Methodology &amp; Citation | Kenya Digital Risk Index">
+<meta name="twitter:description" content="Technical methodology for the Kenya Digital Risk Index: how 1,554 OAG Kenya reports became a 4,675-row register, how findings are split and tagged to the S.I.N.S. Framework™, how recurrence is measured, known limitations, QA, and how to cite the dataset.">
+<meta name="twitter:image" content="https://kdri.retach.ke/favicon-512.png">
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "644eab88d18c4b98bff26c9502233e33"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+
+<nav>
+  <a href="https://retach.tech" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="440 1550 4050 650" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <g>
+          <g><path fill="#111315" d="M1831.498,1956.831c19.826-6.666,36.442-16.984,49.578-30.811c20.396-21.375,30.739-49.559,30.739-83.785c0-38.77-12.545-70.205-37.293-93.426c-24.468-22.965-57.979-34.594-99.594-34.594h-296.484v379.416l94.169-57.183v-70.053h151.379l95.626,133.62h111.176L1831.498,1956.831z M1805.854,1869.165c-8.008,6.396-21.37,9.635-39.715,9.635h-193.525v-76.99h188.162c48.824,0,55.406,20.436,55.406,40.441C1816.182,1850.266,1815.11,1861.756,1805.854,1869.165z"/></g>
+          <g><polygon fill="#111315" points="2119.549,1801.81 2119.549,1856.541 2328.943,1856.541 2328.943,1944.13 2119.549,1944.13 2119.549,2012.42 2411.004,2012.42 2411.004,2100.011 2024.267,2100.011 2024.267,1714.22 2411.004,1714.22 2411.004,1801.81 "/></g>
+          <g><polygon fill="#111315" points="2938.045,1713.772 2938.045,1801.366 2768.61,1801.366 2768.61,2099.57 2674.129,2099.57 2674.129,1801.366 2504.701,1801.366 2504.701,1713.772 "/></g>
+          <g><path fill="#111315" d="M3188.534,1712.363h-95.137l-205.767,385.798h104.46l40.721-78.427h216.295l40.719,78.427h104.47L3188.534,1712.363z M3080.033,1932.14l61.383-114.4l60.637,114.4H3080.033z"/></g>
+          <g><path fill="#111315" d="M3807.403,1956.316l81.596,44.787l-14.213,16.443c-27.104,31.369-58.354,54.416-92.891,68.498c-34.058,13.896-75.007,20.936-121.702,20.936c-66.148,0-122.148-16.84-166.43-50.049c-51.653-38.857-77.835-90.501-77.835-153.498c0-62.051,26.522-113.373,78.817-152.547c44.601-33.516,100.273-50.523,165.447-50.523c93.887,0,167.105,32.93,217.615,97.883l14.951,19.227l-87.225,30.959l-7.985-8.428c-15.958-16.822-35.395-29.631-57.785-38.064c-22.911-8.633-49.683-13.016-79.571-13.016c-44.378,0-80.74,11.213-108.089,33.312c-26.624,21.521-39.569,48.076-39.569,81.197c0,34.396,12.768,61.332,39.015,82.354c27.031,21.654,64.73,32.631,112.056,32.631c28.85,0,54.816-4.432,77.177-13.166c21.942-8.582,41.165-21.625,57.151-38.771L3807.403,1956.316z"/></g>
+          <g><polygon fill="#111315" points="4421.714,1714.363 4421.714,2100.161 4327.551,2100.161 4327.551,1944.281 4080.075,1944.281 4080.075,2100.161 3985.905,2100.161 3985.905,1714.363 4080.075,1714.363 4080.075,1856.687 4327.551,1856.687 4327.551,1714.363 "/></g>
+        </g>
+        <path fill="#111315" d="M1278.62,1598.367c-22.715,0-42.663,11.988-53.966,30.044H757.357l-4.127,3.975c-5.398-30.053-31.45-52.847-62.776-52.847c-35.233,0-63.798,28.839-63.798,64.412c0,30.574,21.095,56.172,49.389,62.768l-3.359,3.238v465.217l332.137-236.097v-196.711l-58.279-52.513h117.367v472.608h-26.897l-36.503-36.751c1.317-5.147,2.016-10.552,2.016-16.114c0-35.573-28.566-64.413-63.803-64.413c-35.233,0-63.797,28.84-63.797,64.413c0,35.581,28.564,64.423,63.797,64.423c5.686,0,11.197-0.752,16.443-2.163l56.175,63.361h188.686v-539.26h23.898c11.159,18.72,31.479,31.241,54.695,31.241c35.236,0,63.802-28.842,63.802-64.418C1342.422,1627.208,1313.856,1598.367,1278.62,1598.367z M689.403,1678.109c-19.447,0-35.208-15.918-35.208-35.551s15.761-35.551,35.208-35.551c19.446,0,35.212,15.918,35.212,35.551S708.85,1678.109,689.403,1678.109z M884.045,1931.405l-145.671,106.89v-328.596l13.012-13.01l132.659,118.402V1931.405z M937.673,2143.755c-19.445,0-35.208-15.919-35.208-35.548c0-19.636,15.762-35.555,35.208-35.555s35.213,15.919,35.213,35.555C972.886,2127.836,957.118,2143.755,937.673,2143.755z M1277.572,1696.938c-19.449,0-35.208-15.918-35.208-35.549c0-19.635,15.759-35.552,35.208-35.552c19.444,0,35.21,15.917,35.21,35.552C1312.782,1681.021,1297.016,1696.938,1277.572,1696.938z"/>
+      </g>
+    </svg>
+    <span class="nav-tag">DATA LAYER</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#stats">Dataset</a></li>
+    <li><a href="/#pillars">S.I.N.S. Breakdown</a></li>
+    <li><a href="/methodology.html">Methodology</a></li>
+    <li><a href="/#limitations">Limitations</a></li>
+    <li><a href="https://retach.tech" class="nav-cta">retach.tech &rarr;</a></li>
+  </ul>
+</nav>
+<div class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">Kenya Digital Risk Index &middot; Methodology &amp; Citation</div>
+    <h1>How the index<br><span class="accent">is built.</span></h1>
+    <p class="hero-sub">The technical reference behind <a href="/" style="color:var(--green-light);">kdri.retach.ke</a>: where the data comes from, how findings are extracted and tagged to the S.I.N.S. Framework&trade;, how recurrence is measured, what the data can't tell you, and how to cite it.</p>
+    <div class="doc-meta">
+      <div><span class="k">Dataset</span><span class="v">OAG Kenya Findings Register</span></div>
+      <div><span class="k">Register version</span><span class="v">v3.8 parser &middot; deduplicated &middot; 27 Jul 2026</span></div>
+      <div><span class="k">Page revised</span><span class="v">26 Sep 2026</span></div>
+      <div><span class="k">Source</span><span class="v">Office of the Auditor-General, Kenya (public reports)</span></div>
+      <div><span class="k">Coverage</span><span class="v">FY2015/16 &ndash; FY2023/24</span></div>
+      <div><span class="k">Publisher</span><span class="v">RETACH Digital Ltd</span></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="section-eyebrow">Contents</div>
+  <ol class="toc">
+    <li><a href="#corpus">1. Source &amp; corpus</a></li>
+    <li><a href="#extraction">2. Extraction rules</a></li>
+    <li><a href="#tagging">3. S.I.N.S. pillar tagging</a></li>
+    <li><a href="#standards">4. ISO 27005 / NIST CSF alignment</a></li>
+    <li><a href="#recurrence">5. Measuring recurrence</a></li>
+    <li><a href="#tiers">6. Entity coverage tiers</a></li>
+    <li><a href="#limitations">7. Additional limitations</a></li>
+    <li><a href="#qa">8. QA &amp; validation</a></li>
+    <li><a href="#cite">9. How to cite &amp; data access</a></li>
+    <li><a href="#disclaimer">10. Disclaimer</a></li>
+  </ol>
+  <a href="/" class="back-link">&larr; Back to the index</a>
+</section>
+
+<section id="corpus" style="background:var(--white);border-top:1px solid var(--gray-border);border-bottom:1px solid var(--gray-border);">
+  <div class="section-eyebrow">1 &middot; Source &amp; Corpus</div>
+  <h2>From 1,554 files<br>to 1,361 reports.</h2>
+  <p class="section-lead">You'll see two report counts on this site. 1,554 is how many files we downloaded. 1,361 is how many made it into the register. Here is every step in between.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Step</th><th>Files</th><th>What happened</th></tr>
+    <tr><td>Downloaded</td><td class="num">1,554</td><td>Every public OAG Kenya report available for FY2015/16&ndash;FY2023/24.</td></tr>
+    <tr><td>Duplicate downloads removed</td><td class="num">&minus;15</td><td>The same report saved under two filenames. 9 matched by filename pattern, 6 resolved by hand with a documented reason for each.</td></tr>
+    <tr><td>Unique reports</td><td class="num">1,539</td><td>&nbsp;</td></tr>
+    <tr><td>Scanned / unextractable excluded</td><td class="num">&minus;178</td><td>Image-only PDFs with no machine-readable text (11.6% of unique reports). Left out entirely &mdash; an unreadable report is an unknown, not a clean audit.</td></tr>
+    <tr><td><b>Reports in the register</b></td><td class="num"><b>1,361</b></td><td>Covering 562 national government entities, state corporations, funds and parastatals.</td></tr>
+  </table></div>
+  <p class="section-lead" style="margin-bottom:16px;">Those 1,361 reports produce 4,675 register rows:</p>
+  <div class="table-wrap"><table>
+    <tr><th>Row type</th><th>Rows</th><th>Share</th></tr>
+    <tr><td>Real audit findings</td><td class="num">4,406</td><td class="num">94.2%</td></tr>
+    <tr><td>Clean / unqualified audit outcomes (no findings)</td><td class="num">269</td><td class="num">5.8%</td></tr>
+    <tr><td><b>Total register rows</b></td><td class="num"><b>4,675</b></td><td class="num">100%</td></tr>
+  </table></div>
+  <p class="pillar-note">All percentages elsewhere on this site that describe findings use the 4,406 real findings as the denominator, not the 4,675 rows.</p>
+</section>
+
+<section id="extraction">
+  <div class="section-eyebrow">2 &middot; Extraction Rules</div>
+  <h2>Structure first.<br>No guessing.</h2>
+  <div class="prose">
+    <p>The parser deliberately uses fixed text patterns and standard section headings rather than machine learning. That keeps every result explainable and repeatable.</p>
+    <ul>
+      <li><b>Where it reads.</b> The first six pages of each report. That window reliably covers the title page and the three standard OAG sections: the Report on the Financial Statements; the Report on Lawfulness and Effectiveness in Use of Public Resources; and the Report on Effectiveness of Internal Controls, Risk Management and Governance.</li>
+      <li><b>How it splits findings.</b> Numbered headings (&ldquo;1. Title&rdquo;, &ldquo;2. Title&rdquo;) are the primary, high-confidence signal that one finding ends and the next begins.</li>
+      <li><b>When there's no clear signal.</b> If a section has no numbered findings, the whole section is kept as one block and flagged for manual review. It is never split on a guess.</li>
+      <li><b>What it strips.</b> Standard audit boilerplate, such as the ISSAI citation wording and pure clean-opinion text, is removed so it can't be counted as a finding.</li>
+    </ul>
+    <p>The main page summarises the three parser updates (v3.6&ndash;v3.8). The largest, v3.8, re-anchored extraction to the real &ldquo;Basis for Qualified / Adverse / Disclaimer of Opinion&rdquo; heading. It changed 534 rows (10.7% of the dataset): 234 real findings that boilerplate had cut short were recovered in full, and 300 rows with no real finding content were correctly removed.</p>
+  </div>
+</section>
+
+<section id="tagging" style="background:var(--white);border-top:1px solid var(--gray-border);border-bottom:1px solid var(--gray-border);">
+  <div class="section-eyebrow">3 &middot; S.I.N.S. Pillar Tagging</div>
+  <h2>212 findings.<br>251 tags.</h2>
+  <p class="section-lead">Each finding is checked against a curated keyword set for each pillar. Keywords must match as whole words, and the entity's own name is excluded from the search so an organisation called &ldquo;&hellip;Network&hellip;&rdquo; can't tag itself.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Pillar</th><th>Layer</th><th>Example keywords</th><th>Findings tagged</th></tr>
+    <tr><td>Systems</td><td>Foundation</td><td>IFMIS, ERP, application system, audit trail</td><td class="num">134</td></tr>
+    <tr><td>Infrastructure</td><td>Operational</td><td>server, data centre, backup, disaster recovery</td><td class="num">59</td></tr>
+    <tr><td>Security</td><td>Governance</td><td>IT security, access control, authentication</td><td class="num">36</td></tr>
+    <tr><td>Network</td><td>Connectivity</td><td>network, LAN/WAN, firewall, connectivity</td><td class="num">22</td></tr>
+    <tr><td colspan="3"><b>Pillar tags in total</b></td><td class="num"><b>251</b></td></tr>
+  </table></div>
+  <div class="prose">
+    <p>A finding can carry more than one tag. An ERP-governance finding, for example, can be tagged both Security and Systems. So the pillar counts add up to more than the number of findings behind them:</p>
+    <ul>
+      <li><b>212</b> unique findings (4.8% of 4,406) carry at least one digital-pillar tag.</li>
+      <li><b>33</b> of those carry more than one tag, adding <b>39</b> extra tags.</li>
+      <li>212 + 39 = <b>251</b> pillar tags.</li>
+      <li>The remaining 4,194 findings (95.2%) match no pillar keyword and are grouped as &ldquo;Other&rdquo;: financial and governance findings. That is expected, since OAG audits are financial-statement audits, not IT audits.</li>
+    </ul>
+    <p>Keyword tagging is a signal, not a validated classification. Treat these counts as a floor for how often digital risk appears in the audit record, not as a measured prevalence.</p>
+  </div>
+</section>
+
+<section id="standards">
+  <div class="section-eyebrow">4 &middot; Standards Alignment</div>
+  <h2>Mapped to how<br>the industry talks.</h2>
+  <div class="table-wrap"><table>
+    <tr><th>S.I.N.S. Pillar</th><th>ISO 27005 domain</th><th>NIST CSF function (category)</th></tr>
+    <tr><td>Systems</td><td>Asset &amp; Vulnerability Management</td><td>Protect (PR.DS, PR.MA)</td></tr>
+    <tr><td>Infrastructure</td><td>Physical &amp; Operational Security</td><td>Protect (PR.PT), Recover (RC.RP)</td></tr>
+    <tr><td>Network</td><td>Communications Security</td><td>Protect (PR.AC), Detect (DE.CM)</td></tr>
+    <tr><td>Security</td><td>Risk Treatment &amp; Organisational Controls</td><td>Identify (ID.GV, ID.RA), Govern</td></tr>
+  </table></div>
+  <p class="pillar-note">Category IDs follow NIST CSF 1.1. In CSF 2.0, PR.AC became PR.AA, PR.PT was split into PR.PS and PR.IR, and ID.GV moved into the new Govern (GV) function. The pillar-to-function mapping is unchanged.</p>
+</section>
+
+<section id="recurrence" style="background:var(--white);border-top:1px solid var(--gray-border);border-bottom:1px solid var(--gray-border);">
+  <div class="section-eyebrow">5 &middot; Measuring Recurrence</div>
+  <h2>Same problem.<br>Next audit.</h2>
+  <p class="section-lead">RETACH's Cyber Risk Quantification (CRQ) Engine estimates Expected Annual Loss as EAL = &Sigma;(frequency &times; severity). This dataset supplies frequency-side evidence only. Severity (what each type of finding costs) is a separate component, not yet built.</p>
+  <div class="prose">
+    <p><b>Measure 1: self-reported (19.8%).</b> The share of the 4,406 findings where the auditor's own wording points to a prior-year issue, with phrases like &ldquo;as previously reported&rdquo; or &ldquo;similar observation was made in the prior year.&rdquo; It only counts when the auditor chose to cross-reference, so it undercounts.</p>
+    <p><b>Measure 2: content-matched (25.6%).</b> Does the same underlying issue persist for the same entity across audit years, whether or not the auditor said so? The method:</p>
+    <ol>
+      <li>Within each entity, normalise every finding title by stripping numbers, amounts and generic audit boilerplate.</li>
+      <li>Compare titles from <i>different</i> financial years. Link any pair with at least 50% word overlap (Jaccard similarity &ge; 0.5).</li>
+      <li>Group linked findings into &ldquo;issue threads&rdquo;: chains of the same problem across years.</li>
+      <li>Exclude titles dominated by currency figures. One mis-parsed reconciliation table initially produced five false &ldquo;recurring findings&rdquo; before this guard was added; they were removed after manual review.</li>
+    </ol>
+    <p>Result: <b>458 issue threads across 243 entities</b>, containing <b>1,126 findings (25.6%)</b>. 341 of those threads run in consecutive years with no clean year in between, which is the stronger signal.</p>
+  </div>
+  <div class="table-wrap"><table>
+    <tr><th>Years the same issue recurred</th><th>Threads</th></tr>
+    <tr><td>2 years</td><td class="num">330</td></tr>
+    <tr><td>3 years</td><td class="num">97</td></tr>
+    <tr><td>4 years</td><td class="num">21</td></tr>
+    <tr><td>5 years</td><td class="num">8</td></tr>
+    <tr><td>6 years</td><td class="num">2</td></tr>
+    <tr><td><b>Total</b></td><td class="num"><b>458</b></td></tr>
+  </table></div>
+  <div class="honesty-banner">
+    <b>Neither 19.8% nor 25.6% is a validated actuarial coefficient.</b> Making either one a defensible EAL input still needs entity-level normalisation, time-decay weighting, and testing against a held-out sample. Only 18 of the 458 threads tag to a S.I.N.S. pillar; the named examples on the <a href="/#methodology" style="color:var(--green-dark);">main page</a> are a proof-of-concept slice, not a prevalence rate for digital-risk recurrence.
+  </div>
+</section>
+
+<section id="tiers">
+  <div class="section-eyebrow">6 &middot; Entity Coverage Tiers</div>
+  <h2>How much digital<br>evidence per entity.</h2>
+  <p class="section-lead">To decide how deep entity-level profiles can go, each of the 562 entities is placed in a tier by how many digital-tagged findings it has in the register.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Tier</th><th>Rule</th><th>Entities</th></tr>
+    <tr><td><b>A</b> &middot; Substantial</td><td>3 or more digital-tagged findings</td><td class="num">21</td></tr>
+    <tr><td><b>B</b> &middot; Limited</td><td>1&ndash;2 digital-tagged findings</td><td class="num">108</td></tr>
+    <tr><td><b>C</b> &middot; None</td><td>No digital-tagged findings (352 with other findings, 81 with no findings at all)</td><td class="num">433</td></tr>
+    <tr><td colspan="2"><b>Total</b></td><td class="num"><b>562</b></td></tr>
+  </table></div>
+  <p class="pillar-note">A tier reflects how much keyword-tagged audit evidence exists, not how risky an entity is. Tier C does not mean &ldquo;no digital risk&rdquo;: it means the OAG record we hold doesn't surface it. Entities audited in fewer years have less chance to reach Tier A.</p>
+</section>
+
+<section id="limitations" style="background:var(--white);border-top:1px solid var(--gray-border);border-bottom:1px solid var(--gray-border);">
+  <div class="section-eyebrow">7 &middot; Additional Limitations</div>
+  <h2>Two more gaps<br>worth knowing.</h2>
+  <p class="section-lead">The main page lists the network false-positive risk, the scanned-file gap, year-mismatch drift and truncation. <a href="/#limitations" style="color:var(--green-dark);">See those here.</a> Two more apply:</p>
+  <div class="callout">
+    <div class="callout-title">Entity-name spelling variants</div>
+    <p>11 confirmed cases of the same entity appearing under slightly different names across years (e.g. &ldquo;Regional Centre on Groundwater Resource&rdquo; vs. &ldquo;&hellip;Resources&rdquo;). Left unmerged on purpose: merging without manual confirmation risks combining two different entities.</p>
+  </div>
+  <div class="callout">
+    <div class="callout-title">Recurrence-thread precision</div>
+    <p>A 50% word-overlap threshold can occasionally link related but distinct findings that share generic phrasing (e.g. &ldquo;Non-Performing Loans to Customers&rdquo; vs. &ldquo;&hellip;to Directors&rdquo; for the same entity). Consecutive-year runs are also unreliable for the few entities whose financial year doesn't end in June, because their year labels don't line up in sequence.</p>
+  </div>
+</section>
+
+<section id="qa">
+  <div class="section-eyebrow">8 &middot; QA &amp; Validation</div>
+  <h2>Tested before<br>it ships.</h2>
+  <div class="prose">
+    <ul>
+      <li>Every parser update (v3.6, v3.7, v3.8) was regression-tested against a 40-file, hand-validated baseline before running on the full corpus.</li>
+      <li>Automated checks cover: placeholder rows, scanned and year-mismatch rates against known baselines, pillar-distribution sanity, duplicate rows, garbled entity names, and per-file finding-count outliers.</li>
+      <li>After v3.8, a stratified manual sample of 171 rows (about 3.5&ndash;5% of the register) was reviewed line by line against the source reports. It found zero regressions and no recurrence of previously fixed defect types.</li>
+      <li>The 15 duplicate downloads were resolved with a documented reason for each (see <a href="#corpus" style="color:var(--green-dark);">section 1</a>).</li>
+    </ul>
+  </div>
+</section>
+
+<section id="cite" style="background:var(--white);border-top:1px solid var(--gray-border);border-bottom:1px solid var(--gray-border);">
+  <div class="section-eyebrow">9 &middot; How to Cite &amp; Data Access</div>
+  <h2>Using this data.</h2>
+  <p class="section-lead" style="margin-bottom:16px;">If you quote figures from the index, please cite it as:</p>
+  <div class="cite-box">RETACH Digital Ltd. (2026). <i>Kenya Digital Risk Index: OAG Kenya Findings Register</i> (Version 3.8) [Data set]. https://kdri.retach.ke/</div>
+  <p class="pillar-note" style="margin-bottom:28px;">Please quote the version number. Figures can change between register versions.</p>
+  <div class="prose">
+    <p><b>What's public.</b> The aggregate statistics on this site and in <a href="/register_public_v38_stats.json" style="color:var(--green-dark);">register_public_v38_stats.json</a>.</p>
+    <p><b>What isn't.</b> The row-level register, the recurrence-thread data and the extraction pipeline are not published. The underlying OAG reports are public documents, available from the Office of the Auditor-General.</p>
+    <p><b>Access and partnerships.</b> For research access or partnership enquiries, contact <a href="mailto:info@retach.tech" style="color:var(--green-dark);">info@retach.tech</a>.</p>
+  </div>
+</section>
+
+<section id="disclaimer">
+  <div class="section-eyebrow">10 &middot; Disclaimer</div>
+  <div class="prose">
+    <p>This dataset is derived from publicly available OAG Kenya audit reports and is provided for research, benchmarking and risk-quantification purposes. It is not a legal, financial or audit opinion. RETACH Digital Ltd makes no representation about the completeness or accuracy of the underlying source documents beyond what this methodology discloses. Findings are extracted and tagged by software and validated through the QA process above; confirm any entity-level conclusion against the source report before relying on it for a decision.</p>
+  </div>
+  <a href="/" class="back-link">&larr; Back to the index</a>
+</section>
+
+<div class="cta-section">
+  <div class="section-eyebrow" style="justify-content:center;">The Data Layer Behind The S.I.N.S. Framework&trade;</div>
+  <h2>Questions about<br>the method?</h2>
+  <p class="section-lead">We'd rather be challenged than quoted wrong. If something here doesn't hold up, tell us.</p>
+  <a href="https://erp.retach.tech/request-quote/new?product=Other%20%2F%20not%20sure" class="btn-primary" target="_blank" rel="noopener">Talk to RETACH &rarr;</a>
+  <a href="/" class="btn-ghost">Back to the index</a>
+</div>
+
+<footer>
+  <div>&copy; 2026 RETACH Digital Ltd &middot; Nairobi, Kenya &middot; Data derived from public OAG Kenya reports, for research &amp; benchmarking purposes.</div>
+  <div><a href="https://retach.tech">retach.tech</a> &middot; <a href="mailto:info@retach.tech">info@retach.tech</a> &middot; <a href="https://wa.me/254767206043">WhatsApp</a> &middot; <a href="https://retach.tech/privacy.html">Privacy</a></div>
+</footer>
+
+</body>
+</html>
