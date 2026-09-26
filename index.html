@@ -6,16 +6,21 @@
 <title>Kenya Digital Risk Index | RETACH Digital</title>
 <meta name="description" content="RETACH Digital's Kenya Digital Risk Index — 4,675 audit findings extracted from 1,554 OAG Kenya reports, mapped to the S.I.N.S. Framework™ and aligned to ISO 27005 / NIST CSF. The empirical backbone of RETACH's Cyber Risk Quantification Engine.">
 <meta name="theme-color" content="#146B4E">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;900&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --green: #146B4E;
-    --green-dark: #0E4D38;
-    --green-light: #2E9E6B;
+    --green-dark: #1e5e3e;
+    --green-light: #3a9b68;
     --green-bg: #f0f8f4;
-    --black: #1a1a1a;
+    --black: #111315;
     --off-white: #fafaf8;
     --white: #ffffff;
     --gray: #6b6b6b;
@@ -27,7 +32,7 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
   body {
-    font-family:'Barlow', sans-serif;
+    font-family:'IBM Plex Sans', sans-serif;
     background:var(--off-white);
     color:var(--black);
     font-size:16px;
@@ -64,27 +69,27 @@
   .hero-inner { position:relative; z-index:1; max-width:1200px; margin:0 auto; }
   .eyebrow { font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--green-light); margin-bottom:18px; display:flex; align-items:center; gap:10px; }
   .eyebrow::before { content:''; width:28px; height:1px; background:var(--green-light); }
-  h1 { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(38px,6vw,66px); line-height:.98; text-transform:uppercase; letter-spacing:-.01em; margin-bottom:22px; max-width:820px; }
+  h1 { font-family:'Space Grotesk',sans-serif; font-weight:900; font-size:clamp(38px,6vw,66px); line-height:.98; text-transform:uppercase; letter-spacing:-.01em; margin-bottom:22px; max-width:820px; }
   h1 .accent { color:var(--green-light); }
   .hero-sub { font-size:17px; color:rgba(255,255,255,.7); max-width:640px; margin-bottom:44px; line-height:1.65; }
   .hero-stats { display:flex; flex-wrap:wrap; gap:0; border-top:1px solid rgba(255,255,255,.15); padding-top:30px; }
   .stat { flex:1; min-width:130px; padding-right:24px; border-right:1px solid rgba(255,255,255,.15); margin-right:24px; margin-bottom:16px; }
   .stat:last-child { border-right:none; }
-  .stat-num { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:34px; color:var(--green-light); line-height:1; display:block; }
+  .stat-num { font-family:'Space Grotesk',sans-serif; font-weight:900; font-size:34px; color:var(--green-light); line-height:1; display:block; }
   .stat-label { font-size:11px; color:rgba(255,255,255,.55); font-weight:500; letter-spacing:.05em; margin-top:6px; text-transform:uppercase; }
 
   /* SECTIONS */
   section { padding:80px 4vw; }
   .section-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:var(--green); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
   .section-eyebrow::before { content:''; width:22px; height:1px; background:var(--green); }
-  h2 { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(28px,4vw,44px); text-transform:uppercase; line-height:.98; letter-spacing:.01em; margin-bottom:16px; }
+  h2 { font-family:'Space Grotesk',sans-serif; font-weight:900; font-size:clamp(28px,4vw,44px); text-transform:uppercase; line-height:.98; letter-spacing:.01em; margin-bottom:16px; }
   .section-lead { font-size:16px; color:var(--gray); max-width:680px; line-height:1.65; margin-bottom:40px; }
 
   /* PILLAR BARS */
   .pillar-list { max-width:820px; }
   .pillar-row { margin-bottom:22px; }
   .pillar-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; }
-  .pillar-name { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; text-transform:uppercase; letter-spacing:.03em; }
+  .pillar-name { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; text-transform:uppercase; letter-spacing:.03em; }
   .pillar-pct { font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--gray); }
   .pillar-track { background:var(--gray-light); border:1px solid var(--gray-border); height:14px; border-radius:2px; overflow:hidden; }
   .pillar-fill { height:100%; background:var(--red); }
@@ -102,13 +107,13 @@
   .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:var(--gray-border); border:1px solid var(--gray-border); margin-top:10px; }
   @media (max-width:900px){ .grid4{ grid-template-columns:repeat(2,1fr);} }
   .fcard { background:var(--white); padding:24px 22px; }
-  .fletter { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:34px; color:var(--green); display:block; line-height:1; }
+  .fletter { font-family:'Space Grotesk',sans-serif; font-weight:900; font-size:34px; color:var(--green); display:block; line-height:1; }
   .fpillar { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin-top:6px; }
   .fdesc { font-size:13px; color:var(--gray); margin-top:8px; line-height:1.5; }
 
   /* LIMITATIONS CALLOUT */
   .callout { background:var(--white); border:1px solid var(--gray-border); border-left:4px solid var(--red); padding:24px 28px; margin-bottom:16px; }
-  .callout-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:16px; text-transform:uppercase; letter-spacing:.03em; margin-bottom:6px; color:var(--black); }
+  .callout-title { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; text-transform:uppercase; letter-spacing:.03em; margin-bottom:6px; color:var(--black); }
   .callout p { font-size:14px; color:var(--gray); line-height:1.6; }
   .honesty-banner { background:var(--green-bg); border:1px solid var(--green); padding:20px 26px; margin-bottom:36px; font-size:14px; color:var(--green-dark); }
   .honesty-banner b { color:var(--black); }
@@ -117,9 +122,9 @@
   .cta-section { background:var(--black); color:var(--white); text-align:center; padding:90px 4vw; }
   .cta-section h2 { color:var(--white); }
   .cta-section .section-lead { color:rgba(255,255,255,.65); margin:0 auto 36px; }
-  .btn-primary { background:var(--green); color:var(--white); padding:16px 36px; font-family:'Barlow',sans-serif; font-weight:700; font-size:13px; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; border-radius:2px; display:inline-block; margin:6px; transition:background .2s; }
+  .btn-primary { background:var(--green); color:var(--white); padding:16px 36px; font-family:'IBM Plex Sans',sans-serif; font-weight:700; font-size:13px; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; border-radius:2px; display:inline-block; margin:6px; transition:background .2s; }
   .btn-primary:hover { background:var(--green-dark); }
-  .btn-ghost { border:1px solid rgba(255,255,255,.3); color:var(--white); padding:15px 34px; font-family:'Barlow',sans-serif; font-weight:700; font-size:13px; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; border-radius:2px; display:inline-block; margin:6px; transition:border-color .2s; }
+  .btn-ghost { border:1px solid rgba(255,255,255,.3); color:var(--white); padding:15px 34px; font-family:'IBM Plex Sans',sans-serif; font-weight:700; font-size:13px; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; border-radius:2px; display:inline-block; margin:6px; transition:border-color .2s; }
   .btn-ghost:hover { border-color:var(--green-light); color:var(--green-light); }
 
   /* FOOTER */
@@ -300,13 +305,13 @@
   <div class="section-eyebrow" style="justify-content:center;">The Data Layer Behind The S.I.N.S. Framework&trade;</div>
   <h2>This is what<br>execution looks like.</h2>
   <p class="section-lead">RETACH doesn't sell frameworks — we quantify risk against them, with cited, auditable evidence. This index is the measurement layer behind every Digital Resilience Assessment we deliver.</p>
-  <a href="https://wa.me/254767206043?text=Hi%20RETACH%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Kenya%20Digital%20Risk%20Index." class="btn-primary" target="_blank" rel="noopener">Talk to RETACH &rarr;</a>
+  <a href="https://erp.retach.tech/request-quote/new?product=Other%20%2F%20not%20sure" class="btn-primary" target="_blank" rel="noopener">Talk to RETACH &rarr;</a>
   <a href="https://retach.tech" class="btn-ghost">Visit retach.tech</a>
 </div>
 
 <footer>
   <div>&copy; 2026 RETACH Digital Ltd &middot; Nairobi, Kenya &middot; Data derived from public OAG Kenya reports, for research &amp; benchmarking purposes.</div>
-  <div><a href="https://retach.tech">retach.tech</a> &middot; <a href="mailto:info@retach.tech">info@retach.tech</a> &middot; <a href="https://wa.me/254767206043">WhatsApp</a></div>
+  <div><a href="https://retach.tech">retach.tech</a> &middot; <a href="mailto:info@retach.tech">info@retach.tech</a> &middot; <a href="https://wa.me/254767206043">WhatsApp</a> &middot; <a href="https://retach.tech/privacy.html">Privacy</a></div>
 </footer>
 
 </body>
