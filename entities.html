@@ -109,6 +109,8 @@
   tr.tier-a:nth-child(even) td { background:#f7e4e6; }
   .num { font-family:'IBM Plex Mono',monospace; text-align:right; }
   .entity-name { font-weight:500; }
+  .entity-name a { color:var(--green-dark); text-decoration:underline; }
+  .entity-name a:hover { color:var(--green); }
   .tier-badge {
     font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:.05em;
     padding:3px 10px; border-radius:20px; display:inline-block;
@@ -226,6 +228,27 @@
   var currentTier = 'all';
   var currentSearch = '';
 
+  // Tier A entities with a verified, signed-off profile page under /entities/.
+  // Only these 15 of the 21 Tier A rows link out — the other 6 (confirmed below
+  // the Tier A floor of 3 on source verification) stay unlinked by design.
+  var tierAProfiles = {
+    'NATIONAL TRANSPORT AND SAFETY AUTHORITY': 'national-transport-and-safety-authority',
+    'NUMERICAL MACHINING COMPLEX LIMITED': 'numerical-machining-complex-limited',
+    'INFORMATION AND COMMUNICATION TECHNOLOGY AUTHORITY': 'information-and-communication-technology-authority',
+    'KENYA ACCREDITATION SERVICE': 'kenya-accreditation-service',
+    'NATIONAL CONSTRUCTION AUTHORITY': 'national-construction-authority',
+    'NATIONAL MINING CORPORATION': 'national-mining-corporation',
+    'NATIONAL YOUTH SERVICE': 'national-youth-service',
+    'TOURISM REGULATORY AUTHORITY': 'tourism-regulatory-authority',
+    'KENYA FISHERIES SERVICE': 'kenya-fisheries-service',
+    'KONZA TECHNOPOLIS DEVELOPMENT AUTHORITY': 'konza-technopolis-development-authority',
+    'NATIONAL CEREALS AND PRODUCE BOARD': 'national-cereals-and-produce-board',
+    'NATIONAL EMPLOYMENT AUTHORITY': 'national-employment-authority',
+    'NATIONAL HOUSING CORPORATION': 'national-housing-corporation',
+    'PRIVATIZATION COMMISSION': 'privatization-commission',
+    'WATER SERVICES REGULATORY BOARD': 'water-services-regulatory-board'
+  };
+
   var tbody = document.getElementById('entityBody');
   var noResults = document.getElementById('noResults');
   var resultCount = document.getElementById('resultCount');
@@ -253,8 +276,12 @@
       noResults.style.display = 'none';
       var rows = filtered.map(function(e) {
         var rowClass = e.tier === 'A' ? ' class="tier-a"' : '';
+        var slug = tierAProfiles[e.name];
+        var nameCell = slug
+          ? '<a href="/entities/' + slug + '.html">' + escapeHtml(e.name) + '</a>'
+          : escapeHtml(e.name);
         return '<tr' + rowClass + '>' +
-          '<td class="entity-name">' + escapeHtml(e.name) + '</td>' +
+          '<td class="entity-name">' + nameCell + '</td>' +
           '<td><span class="tier-badge ' + e.tier + '">Tier ' + e.tier + '</span></td>' +
           '<td class="num">' + e.digital_tagged_count + '</td>' +
           '<td>' + escapeHtml(e.fy_range) + '</td>' +
