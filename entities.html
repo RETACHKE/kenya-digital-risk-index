@@ -98,7 +98,7 @@
   }
   .chip:hover { border-color:var(--green); color:var(--green); }
   .chip.active { background:var(--black); border-color:var(--black); color:var(--white); }
-  .chip.active[data-tier="A"] { background:var(--red); border-color:var(--red); }
+  .chip.active[data-tier="A"] { background:var(--green); border-color:var(--green); }
   .result-count { font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--gray-mid); margin-left:auto; white-space:nowrap; }
 
   /* TABLE */
@@ -107,8 +107,8 @@
   th, td { text-align:left; padding:13px 16px; font-size:14px; border-bottom:1px solid var(--gray-border); }
   th { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--white); background:var(--green); font-weight:500; }
   tr:nth-child(even) td { background:var(--gray-light); }
-  tr.tier-a td { background:var(--red-bg); }
-  tr.tier-a:nth-child(even) td { background:#f7e4e6; }
+  tr.tier-a td { background:var(--green-bg); }
+  tr.tier-a:nth-child(even) td { background:#e3f1e9; }
   .num { font-family:'IBM Plex Mono',monospace; text-align:right; }
   .entity-name { font-weight:500; }
   .entity-name a { color:var(--green-dark); text-decoration:underline; }
@@ -117,7 +117,7 @@
     font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:.05em;
     padding:3px 10px; border-radius:20px; display:inline-block;
   }
-  .tier-badge.A { background:var(--red); color:var(--white); }
+  .tier-badge.A { background:var(--green); color:var(--white); }
   .tier-badge.B { background:var(--green-bg); color:var(--green-dark); border:1px solid var(--green-light); }
   .tier-badge.C { background:var(--gray-light); color:var(--gray-mid); border:1px solid var(--gray-border); }
   .no-results { text-align:center; padding:60px 20px; color:var(--gray-mid); font-size:15px; }
@@ -182,7 +182,7 @@
 <section>
   <div class="wrap">
     <div class="disclaimer">
-      <strong>About this data:</strong> Counts are aggregate-level, sourced from public Office of the Auditor-General (OAG) Kenya reports and mapped to the S.I.N.S. Framework&trade;. This table shows entity-level totals only — it is not a RETACH assessment or rating of any individual entity. Tier A entities (&ge;3 digital-tagged findings) have detailed profiles in progress; see the <a href="/methodology.html">methodology page</a> for the full tier definition and corpus scope.
+      <strong>About this data:</strong> Counts are aggregate-level, sourced from public Office of the Auditor-General (OAG) Kenya reports and mapped to the S.I.N.S. Framework&trade;. This table shows entity-level totals only — it is not a RETACH assessment or rating of any individual entity. Tier A entities (&ge;3 digital-tagged findings) with a linked name have a detailed, source-verified profile page &mdash; 15 of the 21 are published so far; see the <a href="/methodology.html">methodology page</a> for the full tier definition and corpus scope.
     </div>
 
     <div class="table-wrap">

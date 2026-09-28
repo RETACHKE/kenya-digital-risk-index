@@ -92,9 +92,10 @@
   .pillar-name { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; text-transform:uppercase; letter-spacing:.03em; }
   .pillar-pct { font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--gray); }
   .pillar-track { background:var(--gray-light); border:1px solid var(--gray-border); height:14px; border-radius:2px; overflow:hidden; }
-  .pillar-fill { height:100%; background:var(--red); }
+  .pillar-fill { height:100%; background:var(--green); }
   .pillar-note { font-size:13px; color:var(--gray-mid); margin-top:6px; }
   .pillar-summary { font-size:15px; line-height:1.55; margin:0 0 22px; max-width:760px; }
+  .pillar-context { font-size:14px; color:var(--gray); line-height:1.6; margin-top:20px; max-width:760px; }
   .pillar-summary strong { font-family:'Space Grotesk',sans-serif; font-size:22px; color:var(--green); }
   .risk-num { color:var(--red); }
 
@@ -222,33 +223,30 @@
 
 <section id="pillars">
   <div class="section-eyebrow">S.I.N.S. Pillar Distribution</div>
-  <h2>Where the risk<br>actually sits.</h2>
-  <p class="section-lead">Every finding is tagged multi-label against RETACH's four pillars using curated, word-boundary-matched keyword sets. Most OAG findings are financial/governance in nature &mdash; the IT-relevant subset is smaller but consistent, and is exactly the layer RETACH's S.I.N.S. Framework&trade; is built to fix.</p>
+  <h2>Where the digital risk<br>actually sits.</h2>
+  <p class="section-lead">Every finding is tagged multi-label against RETACH's four pillars using curated, word-boundary-matched keyword sets &mdash; this is the digital-risk layer RETACH's S.I.N.S. Framework&trade; is built to fix, shown here pillar against pillar.</p>
 
-  <p class="pillar-summary"><strong class="num">212</strong> of 4,406 audit findings (4.8%) carry at least one S.I.N.S. digital-pillar tag. The pillar rows below add up to 251, not 212, because 33 of those findings are tagged to more than one pillar. Tags come from keyword matching, so read them as a signal, not a validated count.</p>
+  <p class="pillar-summary"><strong class="num">212</strong> of 4,406 audit findings (4.8%) carry at least one S.I.N.S. digital-pillar tag &mdash; <strong class="num">251</strong> tags in total, since 33 of those findings are tagged to more than one pillar. Tags come from keyword matching, so read them as a signal, not a validated count.</p>
   <div class="pillar-list">
     <div class="pillar-row">
-      <div class="pillar-top"><span class="pillar-name">Other (Financial / Governance)</span><span class="pillar-pct num">95.2% &middot; 4,194 rows</span></div>
-      <div class="pillar-track"><div class="pillar-fill" style="width:95.2%;background:var(--gray-mid);"></div></div>
+      <div class="pillar-top"><span class="pillar-name">Systems</span><span class="pillar-pct num">134 tags &middot; 3.0%</span></div>
+      <div class="pillar-track"><div class="pillar-fill" style="width:100%;"></div></div>
     </div>
     <div class="pillar-row">
-      <div class="pillar-top"><span class="pillar-name">Systems</span><span class="pillar-pct num">3.0% &middot; 134 rows</span></div>
-      <div class="pillar-track"><div class="pillar-fill" style="width:3.0%;"></div></div>
+      <div class="pillar-top"><span class="pillar-name">Infrastructure</span><span class="pillar-pct num">59 tags &middot; 1.3%</span></div>
+      <div class="pillar-track"><div class="pillar-fill" style="width:44%;"></div></div>
     </div>
     <div class="pillar-row">
-      <div class="pillar-top"><span class="pillar-name">Infrastructure</span><span class="pillar-pct num">1.3% &middot; 59 rows</span></div>
-      <div class="pillar-track"><div class="pillar-fill" style="width:1.3%;"></div></div>
+      <div class="pillar-top"><span class="pillar-name">Security</span><span class="pillar-pct num">36 tags &middot; 0.8%</span></div>
+      <div class="pillar-track"><div class="pillar-fill" style="width:27%;"></div></div>
     </div>
     <div class="pillar-row">
-      <div class="pillar-top"><span class="pillar-name">Security</span><span class="pillar-pct num">0.8% &middot; 36 rows</span></div>
-      <div class="pillar-track"><div class="pillar-fill" style="width:0.8%;"></div></div>
-    </div>
-    <div class="pillar-row">
-      <div class="pillar-top"><span class="pillar-name">Network</span><span class="pillar-pct num">0.5% &middot; 22 rows</span></div>
-      <div class="pillar-track"><div class="pillar-fill" style="width:0.5%;"></div></div>
+      <div class="pillar-top"><span class="pillar-name">Network</span><span class="pillar-pct num">22 tags &middot; 0.5%</span></div>
+      <div class="pillar-track"><div class="pillar-fill" style="width:16%;"></div></div>
       <div class="pillar-note">&ast; Network-pillar tags carry a known false-positive risk (keyword echo on non-IT findings) &mdash; see Limitations.</div>
     </div>
   </div>
+  <p class="pillar-context">Bars above compare the four digital pillars to each other &mdash; Systems is the largest, so it sets the scale. Across the full register, these 251 tags sit within 4,406 total audit findings; the remaining 95.2% are general financial/governance findings, which is expected since OAG audits are financial-statement audits, not IT audits.</p>
 
   <div class="grid4">
     <div class="fcard"><span class="fletter">S</span><div class="fpillar">Systems</div><div class="fdesc">ERP hardening, IAM, endpoint control, asset lifecycle.</div></div>
@@ -261,14 +259,7 @@
 <section id="methodology" style="background:var(--white);border-top:1px solid var(--gray-border);border-bottom:1px solid var(--gray-border);">
   <div class="section-eyebrow">Methodology</div>
   <h2>Patterns, not predictions.<br>Proof over guesswork.</h2>
-  <p class="section-lead">We built this the RETACH way: keep it simple, and be honest about what you don't know. The extraction tool looks for clear structural signals in each report &mdash; numbered findings, standard section headings &mdash; rather than an AI trying to interpret meaning. When a report doesn't give a clean signal, it gets flagged for a person to check by hand, instead of guessing. And before any change went live across all 1,361 reports, it was tested against a set we'd already verified ourselves.</p>
-
-  <table>
-    <tr><th>Update</th><th>What we fixed</th><th>Result</th></tr>
-    <tr><td class="num">v3.6</td><td>A handful of report titles were unreadable because of a formatting quirk in a few PDFs.</td><td>6 reports that had failed to process were recovered.</td></tr>
-    <tr><td class="num">v3.7</td><td>The tool didn't recognize every way audit reports word their standard legal disclaimers.</td><td>6 rows that were just boilerplate text, not real findings, were removed.</td></tr>
-    <tr><td class="num">v3.8</td><td>Real findings were sometimes getting cut off by the standard disclaimer text sitting in front of them.</td><td>534 rows fixed (11% of the dataset): 234 real findings were recovered in full, and 300 rows that weren't real findings were correctly removed.</td></tr>
-  </table>
+  <p class="section-lead">We built this the RETACH way: keep it simple, and be honest about what you don't know. The extraction tool looks for clear structural signals in each report &mdash; numbered findings, standard section headings &mdash; rather than an AI trying to interpret meaning. When a report doesn't give a clean signal, it gets flagged for a person to check by hand, instead of guessing. And before any change went live across all 1,361 reports, it was tested against a set we'd already verified ourselves. Full parser version history is on the <a href="/methodology.html">methodology page</a>.</p>
 
   <p class="section-lead" style="margin-bottom:16px;">We also map every pillar back to two global standards &mdash; ISO 27005 and the NIST Cybersecurity Framework &mdash; so the findings aren't just RETACH's opinion. It's how the wider security industry already talks about these risks.</p>
   <table>

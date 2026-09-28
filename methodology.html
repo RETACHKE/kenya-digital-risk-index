@@ -266,7 +266,16 @@
       <li><b>When there's no clear signal.</b> If a section has no numbered findings, the whole section is kept as one block and flagged for manual review. It is never split on a guess.</li>
       <li><b>What it strips.</b> Standard audit boilerplate, such as the ISSAI citation wording and pure clean-opinion text, is removed so it can't be counted as a finding.</li>
     </ul>
-    <p>The main page summarises the three parser updates (v3.6&ndash;v3.8). The largest, v3.8, re-anchored extraction to the real &ldquo;Basis for Qualified / Adverse / Disclaimer of Opinion&rdquo; heading. It changed 534 rows (10.7% of the dataset): 234 real findings that boilerplate had cut short were recovered in full, and 300 rows with no real finding content were correctly removed.</p>
+    <p>Three parser updates got the extraction to this point:</p>
+  </div>
+  <div class="table-wrap"><table>
+    <tr><th>Update</th><th>What we fixed</th><th>Result</th></tr>
+    <tr><td class="num">v3.6</td><td>A handful of report titles were unreadable because of a formatting quirk in a few PDFs.</td><td>6 reports that had failed to process were recovered.</td></tr>
+    <tr><td class="num">v3.7</td><td>The tool didn't recognize every way audit reports word their standard legal disclaimers.</td><td>6 rows that were just boilerplate text, not real findings, were removed.</td></tr>
+    <tr><td class="num">v3.8</td><td>Real findings were sometimes getting cut off by the standard disclaimer text sitting in front of them.</td><td>534 rows fixed (11% of the dataset): 234 real findings were recovered in full, and 300 rows that weren't real findings were correctly removed.</td></tr>
+  </table></div>
+  <div class="prose">
+    <p>The largest, v3.8, re-anchored extraction to the real &ldquo;Basis for Qualified / Adverse / Disclaimer of Opinion&rdquo; heading &mdash; the source of the 534-row fix above.</p>
   </div>
 </section>
 
