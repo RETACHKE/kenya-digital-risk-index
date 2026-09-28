@@ -257,6 +257,13 @@
   var searchbox = document.getElementById('searchbox');
   var chips = document.querySelectorAll('.chip');
 
+  // Pick up ?q= from the homepage hero search box, if present.
+  var qParam = new URLSearchParams(window.location.search).get('q');
+  if (qParam) {
+    currentSearch = qParam;
+    searchbox.value = qParam;
+  }
+
   function escapeHtml(s) {
     var div = document.createElement('div');
     div.textContent = s;
