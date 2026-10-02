@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Entity Search | Kenya Digital Risk Index | RETACH Digital</title>
-<meta name="description" content="Search all 562 Kenyan public entities in the Kenya Digital Risk Index register — tier classification, digital-tagged finding counts, and fiscal year coverage, sourced from public OAG Kenya audit reports.">
+<meta name="description" content="Search all 570 Kenyan public entities in the Kenya Digital Risk Index register — tier classification, digital-tagged finding counts, and fiscal year coverage, sourced from public OAG Kenya audit reports.">
 <meta name="theme-color" content="#146B4E">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://kdri.retach.ke/entities.html">
 <meta property="og:title" content="Entity Search | Kenya Digital Risk Index">
-<meta property="og:description" content="Search all 562 Kenyan public entities in the Kenya Digital Risk Index register.">
+<meta property="og:description" content="Search all 570 Kenyan public entities in the Kenya Digital Risk Index register.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kdri.retach.ke/entities.html">
 <meta property="og:image" content="https://kdri.retach.ke/og-image.png">
@@ -164,7 +164,7 @@
 </nav>
 
 <div class="pageheader">
-  <div class="eyebrow">OAG Kenya Findings Corpus &middot; 562 Public Entities</div>
+  <div class="eyebrow">OAG Kenya Findings Corpus &middot; 570 Public Entities</div>
   <h1>Entity Search</h1>
   <p class="page-sub">Search every public entity in the Kenya Digital Risk Index register — tier classification, digital-tagged finding counts, and fiscal year coverage. See the <a href="/methodology.html">full methodology</a> for how tiers and counts are derived.</p>
 </div>
@@ -173,11 +173,11 @@
   <div class="controls-inner">
     <input type="text" id="searchbox" placeholder="Search by entity name…" autocomplete="off">
     <div class="chips">
-      <span class="chip active" data-tier="all">All (562)</span>
-      <span class="chip" data-tier="A">Tier A — 21</span>
-      <span class="chip" data-tier="B">Tier B — 108</span>
-      <span class="chip" data-tier="C">Tier C — 433</span>
-      <span class="result-count" id="resultCount">562 entities</span>
+      <span class="chip active" data-tier="all">All (570)</span>
+      <span class="chip" data-tier="A">Tier A — 48</span>
+      <span class="chip" data-tier="B">Tier B — 155</span>
+      <span class="chip" data-tier="C">Tier C — 367</span>
+      <span class="result-count" id="resultCount">570 entities</span>
     </div>
   </div>
 </div>
@@ -185,7 +185,7 @@
 <section>
   <div class="wrap">
     <div class="disclaimer">
-      <strong>About this data:</strong> Counts are aggregate-level, sourced from public Office of the Auditor-General (OAG) Kenya reports and mapped to the S.I.N.S. Framework&trade;. This table shows entity-level totals only — it is not a RETACH assessment or rating of any individual entity. Tier A entities (&ge;3 digital-tagged findings) with a linked name have a detailed, source-verified profile page &mdash; 15 of the 21 are published so far; see the <a href="/methodology.html">methodology page</a> for the full tier definition and corpus scope.
+      <strong>About this data:</strong> Counts are aggregate-level, sourced from public Office of the Auditor-General (OAG) Kenya reports and mapped to the S.I.N.S. Framework&trade;. This table shows entity-level totals only — it is not a RETACH assessment or rating of any individual entity. Tier A entities (&ge;3 confirmed digital findings, checked against the source report) have a detailed, source-verified profile page &mdash; all 48 are published; see the <a href="/methodology.html">methodology page</a> for the full tier definition and corpus scope.
     </div>
 
     <div class="table-wrap">
@@ -219,7 +219,7 @@
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Kenya Digital Risk Index — Entity Search",
-  "description": "Entity-level aggregate view of the Kenya Digital Risk Index register: 562 public entities, tier classification, digital-tagged finding counts, sourced from public OAG Kenya audit reports.",
+  "description": "Entity-level aggregate view of the Kenya Digital Risk Index register: 570 public entities, tier classification, digital-tagged finding counts, sourced from public OAG Kenya audit reports.",
   "url": "https://kdri.retach.ke/entities.html",
   "isPartOf": { "@type": "Dataset", "name": "Kenya Digital Risk Index", "url": "https://kdri.retach.ke/" },
   "creator": { "@type": "Organization", "name": "RETACH Digital Ltd", "url": "https://retach.tech" },
@@ -234,24 +234,56 @@
   var currentSearch = '';
 
   // Tier A entities with a verified, signed-off profile page under /entities/.
-  // Only these 15 of the 21 Tier A rows link out — the other 6 (confirmed below
-  // the Tier A floor of 3 on source verification) stay unlinked by design.
+  // All 48 Tier A entities (3 or more confirmed findings) link out.
   var tierAProfiles = {
-    'NATIONAL TRANSPORT AND SAFETY AUTHORITY': 'national-transport-and-safety-authority',
-    'NUMERICAL MACHINING COMPLEX LIMITED': 'numerical-machining-complex-limited',
-    'INFORMATION AND COMMUNICATION TECHNOLOGY AUTHORITY': 'information-and-communication-technology-authority',
-    'KENYA ACCREDITATION SERVICE': 'kenya-accreditation-service',
-    'NATIONAL CONSTRUCTION AUTHORITY': 'national-construction-authority',
-    'NATIONAL MINING CORPORATION': 'national-mining-corporation',
-    'NATIONAL YOUTH SERVICE': 'national-youth-service',
-    'TOURISM REGULATORY AUTHORITY': 'tourism-regulatory-authority',
-    'KENYA FISHERIES SERVICE': 'kenya-fisheries-service',
-    'KONZA TECHNOPOLIS DEVELOPMENT AUTHORITY': 'konza-technopolis-development-authority',
-    'NATIONAL CEREALS AND PRODUCE BOARD': 'national-cereals-and-produce-board',
-    'NATIONAL EMPLOYMENT AUTHORITY': 'national-employment-authority',
-    'NATIONAL HOUSING CORPORATION': 'national-housing-corporation',
-    'PRIVATIZATION COMMISSION': 'privatization-commission',
-    'WATER SERVICES REGULATORY BOARD': 'water-services-regulatory-board'
+    "AGRICULTURAL DEVELOPMENT CORPORATION": "agricultural-development-corporation",
+    "BOMAS OF KENYA LIMITED": "bomas-of-kenya-limited",
+    "ENERGY AND PETROLEUM REGULATORY AUTHORITY": "energy-and-petroleum-regulatory-authority",
+    "EWASO NG'IRO SOUTH RIVER BASIN DEVELOPMENT AUTHORITY": "ewaso-ng-iro-south-river-basin-development-authority",
+    "GEOTHERMAL DEVELOPMENT COMPANY LIMITED": "geothermal-development-company-limited",
+    "INFORMATION AND COMMUNICATION TECHNOLOGY AUTHORITY": "information-and-communication-technology-authority",
+    "INSTITUTE OF HUMAN RESOURCE MANAGEMENT": "institute-of-human-resource-management",
+    "KENYA ACCOUNTANTS AND SECRETARIES NATIONAL EXAMINATIONS BOARD": "kenya-accountants-and-secretaries-national-examinations-board",
+    "KENYA ACCREDITATION SERVICE": "kenya-accreditation-service",
+    "KENYA AIRPORTS AUTHORITY": "kenya-airports-authority",
+    "KENYA BROADCASTING CORPORATION": "kenya-broadcasting-corporation",
+    "KENYA ELECTRICITY TRANSMISSION COMPANY LIMITED": "kenya-electricity-transmission-company-limited",
+    "KENYA FISHERIES SERVICE": "kenya-fisheries-service",
+    "KENYA FOREST SERVICE": "kenya-forest-service",
+    "KENYA MEDICAL RESEARCH INSTITUTE": "kenya-medical-research-institute",
+    "KENYA PIPELINE COMPANY LIMITED": "kenya-pipeline-company-limited",
+    "KENYA PORTS AUTHORITY": "kenya-ports-authority",
+    "KENYA POWER AND LIGHTING COMPANY PLC": "kenya-power-and-lighting-company-plc",
+    "KENYA REVENUE AUTHORITY": "kenya-revenue-authority",
+    "KENYA SCHOOL OF GOVERNMENT": "kenya-school-of-government",
+    "KENYA WILDLIFE SERVICE": "kenya-wildlife-service",
+    "KENYATTA UNIVERSITY TEACHING REFERRAL & RESEARCH HOSPITAL": "kenyatta-university-teaching-referral-research-hospital",
+    "KONZA TECHNOPOLIS DEVELOPMENT AUTHORITY": "konza-technopolis-development-authority",
+    "MOI TEACHING AND REFERRAL HOSPITAL": "moi-teaching-and-referral-hospital",
+    "NATIONAL CEREALS AND PRODUCE BOARD": "national-cereals-and-produce-board",
+    "NATIONAL CONSTRUCTION AUTHORITY": "national-construction-authority",
+    "NATIONAL COUNCIL FOR CHILDREN'S SERVICES": "national-council-for-children-s-services",
+    "NATIONAL EMPLOYMENT AUTHORITY": "national-employment-authority",
+    "NATIONAL ENVIRONMENT MANAGEMENT AUTHORITY": "national-environment-management-authority",
+    "NATIONAL HEALTH INSURANCE FUND": "national-health-insurance-fund",
+    "NATIONAL HOUSING CORPORATION": "national-housing-corporation",
+    "NATIONAL INDUSTRIAL TRAINING AUTHORITY": "national-industrial-training-authority",
+    "NATIONAL MINING CORPORATION": "national-mining-corporation",
+    "NATIONAL OIL CORPORATION OF KENYA LIMITED": "national-oil-corporation-of-kenya-limited",
+    "NATIONAL TRANSPORT AND SAFETY AUTHORITY": "national-transport-and-safety-authority",
+    "NATIONAL WATER HARVESTING AND STORAGE AUTHORITY": "national-water-harvesting-and-storage-authority",
+    "NATIONAL YOUTH SERVICE": "national-youth-service",
+    "NUMERICAL MACHINING COMPLEX LIMITED": "numerical-machining-complex-limited",
+    "NZOIA SUGAR COMPANY LIMITED": "nzoia-sugar-company-limited",
+    "POSTAL CORPORATION OF KENYA": "postal-corporation-of-kenya",
+    "PRIVATIZATION COMMISSION": "privatization-commission",
+    "PUBLIC PROCUREMENT REGULATORY AUTHORITY": "public-procurement-regulatory-authority",
+    "PYRETHRUM PROCESSING COMPANY OF KENYA": "pyrethrum-processing-company-of-kenya",
+    "RIVATEX EAST AFRICA LIMITED": "rivatex-east-africa-limited",
+    "TECHNICAL AND VOCATIONAL EDUCATION AND TRAINING AUTHORITY": "technical-and-vocational-education-and-training-authority",
+    "TOURISM REGULATORY AUTHORITY": "tourism-regulatory-authority",
+    "TOURISM RESEARCH INSTITUTE": "tourism-research-institute",
+    "WATER SERVICES REGULATORY BOARD": "water-services-regulatory-board"
   };
 
   var tbody = document.getElementById('entityBody');

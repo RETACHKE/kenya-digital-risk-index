@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Methodology &amp; Citation | Kenya Digital Risk Index | RETACH Digital</title>
-<meta name="description" content="Technical methodology for the Kenya Digital Risk Index: how 1,554 OAG Kenya reports became a 4,675-row register, how findings are split and tagged to the S.I.N.S. Framework™, how recurrence is measured, known limitations, QA, and how to cite the dataset.">
+<meta name="description" content="Technical methodology for the Kenya Digital Risk Index: how 1,774 OAG Kenya reports became an 8,205-row register, how findings are split and tagged to the S.I.N.S. Framework™, how recurrence is measured, known limitations, QA, and how to cite the dataset.">
 <meta name="theme-color" content="#146B4E">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -163,14 +163,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RETACH Digital">
 <meta property="og:title" content="Methodology &amp; Citation | Kenya Digital Risk Index">
-<meta property="og:description" content="Technical methodology for the Kenya Digital Risk Index: how 1,554 OAG Kenya reports became a 4,675-row register, how findings are split and tagged to the S.I.N.S. Framework™, how recurrence is measured, known limitations, QA, and how to cite the dataset.">
+<meta property="og:description" content="Technical methodology for the Kenya Digital Risk Index: how 1,774 OAG Kenya reports became an 8,205-row register, how findings are split and tagged to the S.I.N.S. Framework™, how recurrence is measured, known limitations, QA, and how to cite the dataset.">
 <meta property="og:url" content="https://kdri.retach.ke/methodology.html">
 <meta property="og:image" content="https://kdri.retach.ke/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Methodology &amp; Citation | Kenya Digital Risk Index">
-<meta name="twitter:description" content="Technical methodology for the Kenya Digital Risk Index: how 1,554 OAG Kenya reports became a 4,675-row register, how findings are split and tagged to the S.I.N.S. Framework™, how recurrence is measured, known limitations, QA, and how to cite the dataset.">
+<meta name="twitter:description" content="Technical methodology for the Kenya Digital Risk Index: how 1,774 OAG Kenya reports became an 8,205-row register, how findings are split and tagged to the S.I.N.S. Framework™, how recurrence is measured, known limitations, QA, and how to cite the dataset.">
 <meta name="twitter:image" content="https://kdri.retach.ke/og-image.png">
 <!-- Cloudflare Web Analytics -->
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "644eab88d18c4b98bff26c9502233e33"}'></script>
@@ -212,10 +212,10 @@
     <p class="hero-sub">The technical reference behind <a href="/" style="color:var(--green-light);">kdri.retach.ke</a>: where the data comes from, how findings are extracted and tagged to the S.I.N.S. Framework&trade;, how recurrence is measured, what the data can't tell you, and how to cite it.</p>
     <div class="doc-meta">
       <div><span class="k">Dataset</span><span class="v">OAG Kenya Findings Register</span></div>
-      <div><span class="k">Register version</span><span class="v">v3.8 parser &middot; deduplicated &middot; 27 Jul 2026</span></div>
-      <div><span class="k">Page revised</span><span class="v">26 Sep 2026</span></div>
+      <div><span class="k">Register version</span><span class="v">v4.0 &middot; all pages read &middot; deduplicated &middot; 3 Oct 2026</span></div>
+      <div><span class="k">Page revised</span><span class="v">3 Oct 2026</span></div>
       <div><span class="k">Source</span><span class="v">Office of the Auditor-General, Kenya (public reports)</span></div>
-      <div><span class="k">Coverage</span><span class="v">FY2015/16 &ndash; FY2023/24</span></div>
+      <div><span class="k">Coverage</span><span class="v">FY2015/16 &ndash; FY2024/25</span></div>
       <div><span class="k">Publisher</span><span class="v">RETACH Digital Ltd</span></div>
     </div>
   </div>
@@ -238,71 +238,80 @@
   <a href="/" class="back-link">&larr; Back to the index</a>
 </section>
 
+<section style="padding-top:32px;padding-bottom:0;">
+  <div class="callout">
+    <div class="callout-title">Correction &mdash; 3 October 2026</div>
+    <p>Version 4.0 replaces version 3.8. Earlier versions read only the first six pages of 722 longer native-text reports, and did not recover text from every page of every scanned report. Findings after page six, or on unread scanned pages, were missed. Version 4.0 reads every page of all 1,774 reports. The register grew from 4,675 to 8,205 rows, and digital-tagged findings from 212 to 484. Entities with three or more tagged findings rose from 21 to 69; after checking against the source reports, 48 have three or more confirmed findings, up from 21. No entity&rsquo;s confirmed findings went down. Counts and charts across the site have been restated.</p>
+  </div>
+</section>
+
 <section id="corpus" style="background:var(--white);border-top:1px solid var(--gray-border);border-bottom:1px solid var(--gray-border);">
   <div class="section-eyebrow">1 &middot; Source &amp; Corpus</div>
-  <h2>From 1,554 files<br>to 1,361 reports.</h2>
-  <p class="section-lead">You'll see two report counts on this site. 1,554 is how many files we downloaded. 1,361 is how many made it into the register. Here is every step in between.</p>
+  <h2>From 1,791 files<br>to 1,774 reports.</h2>
+  <p class="section-lead">You'll see two report counts on this site. 1,791 is how many files we downloaded. 1,774 is how many made it into the register. Here is every step in between.</p>
   <div class="table-wrap"><table>
     <tr><th>Step</th><th>Files</th><th>What happened</th></tr>
-    <tr><td>Downloaded</td><td class="num">1,554</td><td>Every public OAG Kenya report available for FY2015/16&ndash;FY2023/24.</td></tr>
-    <tr><td>Duplicate downloads removed</td><td class="num">&minus;15</td><td>The same report saved under two filenames. 9 matched by filename pattern, 6 resolved by hand with a documented reason for each.</td></tr>
-    <tr><td>Unique reports</td><td class="num">1,539</td><td>&nbsp;</td></tr>
-    <tr><td>Scanned / unextractable excluded</td><td class="num">&minus;178</td><td>Image-only PDFs with no machine-readable text (11.6% of unique reports). Left out entirely &mdash; an unreadable report is an unknown, not a clean audit.</td></tr>
-    <tr><td><b>Reports in the register</b></td><td class="num"><b>1,361</b></td><td>Covering 562 national government entities, state corporations, funds and parastatals.</td></tr>
+    <tr><td>Downloaded</td><td class="num">1,791</td><td>Public OAG Kenya reports for FY2015/16&ndash;FY2024/25: 1,554 downloaded for earlier versions plus 237 for FY2024/25.</td></tr>
+    <tr><td>Duplicate downloads removed</td><td class="num">&minus;16</td><td>The same report saved under two filenames.</td></tr>
+    <tr><td>Unique reports</td><td class="num">1,775</td><td>&nbsp;</td></tr>
+    <tr><td>Unreadable file excluded</td><td class="num">&minus;1</td><td>One file with no usable text (0.1% of unique reports). Left out entirely &mdash; an unreadable report is an unknown, not a clean audit.</td></tr>
+    <tr><td><b>Reports in the register</b></td><td class="num"><b>1,774</b></td><td>Covering 570 national government entities, state corporations, funds and parastatals. Scanned reports are now read with OCR instead of being excluded.</td></tr>
   </table></div>
-  <p class="section-lead" style="margin-bottom:16px;">Those 1,361 reports produce 4,675 register rows:</p>
+  <p class="section-lead" style="margin-bottom:16px;">Those 1,774 reports produce 8,205 register rows:</p>
   <div class="table-wrap"><table>
     <tr><th>Row type</th><th>Rows</th><th>Share</th></tr>
-    <tr><td>Real audit findings</td><td class="num">4,406</td><td class="num">94.2%</td></tr>
-    <tr><td>Clean / unqualified audit outcomes (no findings)</td><td class="num">269</td><td class="num">5.8%</td></tr>
-    <tr><td><b>Total register rows</b></td><td class="num"><b>4,675</b></td><td class="num">100%</td></tr>
+    <tr><td>Real audit findings</td><td class="num">7,972</td><td class="num">97.2%</td></tr>
+    <tr><td>Clean / unqualified audit outcomes (no findings)</td><td class="num">233</td><td class="num">2.8%</td></tr>
+    <tr><td><b>Total register rows</b></td><td class="num"><b>8,205</b></td><td class="num">100%</td></tr>
   </table></div>
-  <p class="pillar-note">All percentages elsewhere on this site that describe findings use the 4,406 real findings as the denominator, not the 4,675 rows.</p>
+  <p class="pillar-note">All percentages elsewhere on this site that describe findings use the 7,972 real findings as the denominator, not the 8,205 rows.</p>
 </section>
 
 <section id="extraction">
   <div class="section-eyebrow">2 &middot; Extraction Rules</div>
   <h2>Structure first.<br>No guessing.</h2>
   <div class="prose">
-    <p>The parser deliberately uses fixed text patterns and standard section headings rather than machine learning. That keeps every result explainable and repeatable.</p>
+    <p>The parser uses fixed text patterns and standard section headings. That keeps every result explainable and repeatable. Text was extracted directly from native-text PDFs. For scanned reports, text was recovered with optical character recognition (OCR) software. Findings were classified into the S.I.N.S. pillars with fixed keyword rules; no machine-learning classifier was used to tag or count findings.</p>
     <ul>
-      <li><b>Where it reads.</b> The first six pages of each report. That window reliably covers the title page and the three standard OAG sections: the Report on the Financial Statements; the Report on Lawfulness and Effectiveness in Use of Public Resources; and the Report on Effectiveness of Internal Controls, Risk Management and Governance.</li>
+      <li><b>Where it reads.</b> Every page of each report (version 4.0; earlier versions read only the first six pages of longer native-text reports). It looks for the title page and the three standard OAG sections: the Report on the Financial Statements; the Report on Lawfulness and Effectiveness in Use of Public Resources; and the Report on Effectiveness of Internal Controls, Risk Management and Governance.</li>
       <li><b>How it splits findings.</b> Numbered headings (&ldquo;1. Title&rdquo;, &ldquo;2. Title&rdquo;) are the primary, high-confidence signal that one finding ends and the next begins.</li>
       <li><b>When there's no clear signal.</b> If a section has no numbered findings, the whole section is kept as one block and flagged for manual review. It is never split on a guess.</li>
       <li><b>What it strips.</b> Standard audit boilerplate, such as the ISSAI citation wording and pure clean-opinion text, is removed so it can't be counted as a finding.</li>
     </ul>
-    <p>Three parser updates got the extraction to this point:</p>
+    <p>Five updates got the extraction to this point:</p>
   </div>
   <div class="table-wrap"><table>
     <tr><th>Update</th><th>What we fixed</th><th>Result</th></tr>
     <tr><td class="num">v3.6</td><td>A handful of report titles were unreadable because of a formatting quirk in a few PDFs.</td><td>6 reports that had failed to process were recovered.</td></tr>
     <tr><td class="num">v3.7</td><td>The tool didn't recognize every way audit reports word their standard legal disclaimers.</td><td>6 rows that were just boilerplate text, not real findings, were removed.</td></tr>
     <tr><td class="num">v3.8</td><td>Real findings were sometimes getting cut off by the standard disclaimer text sitting in front of them.</td><td>534 rows fixed (11% of the dataset): 234 real findings were recovered in full, and 300 rows that weren't real findings were correctly removed.</td></tr>
+    <tr><td class="num">v3.9</td><td>The newer OAG report template adds &ldquo;THE&rdquo; to section headings, so some qualified reports were skipped and came out as having no findings.</td><td>Headings now match both wordings; findings in affected reports were recovered. Scanned reports were read with OCR.</td></tr>
+    <tr><td class="num">v4.0</td><td>Long native-text reports were read only up to page six, so findings after that were missed.</td><td>All pages of all 1,774 reports are now read. The register grew from 4,675 to 8,205 rows.</td></tr>
   </table></div>
   <div class="prose">
-    <p>The largest, v3.8, re-anchored extraction to the real &ldquo;Basis for Qualified / Adverse / Disclaimer of Opinion&rdquo; heading &mdash; the source of the 534-row fix above.</p>
+    <p>The largest fix of the earlier updates, v3.8, re-anchored extraction to the real &ldquo;Basis for Qualified / Adverse / Disclaimer of Opinion&rdquo; heading &mdash; the source of the 534-row fix above.</p>
   </div>
 </section>
 
 <section id="tagging" style="background:var(--white);border-top:1px solid var(--gray-border);border-bottom:1px solid var(--gray-border);">
   <div class="section-eyebrow">3 &middot; S.I.N.S. Pillar Tagging</div>
-  <h2>212 findings.<br>251 tags.</h2>
+  <h2>484 findings.<br>601 tags.</h2>
   <p class="section-lead">Each finding is checked against a curated keyword set for each pillar. Keywords must match as whole words, and the entity's own name is excluded from the search so an organisation called &ldquo;&hellip;Network&hellip;&rdquo; can't tag itself.</p>
   <div class="table-wrap"><table>
     <tr><th>Pillar</th><th>Layer</th><th>Example keywords</th><th>Findings tagged</th></tr>
-    <tr><td>Systems</td><td>Foundation</td><td>IFMIS, ERP, application system, audit trail</td><td class="num">134</td></tr>
-    <tr><td>Infrastructure</td><td>Operational</td><td>server, data centre, backup, disaster recovery</td><td class="num">59</td></tr>
-    <tr><td>Security</td><td>Governance</td><td>IT security, access control, authentication</td><td class="num">36</td></tr>
-    <tr><td>Network</td><td>Connectivity</td><td>network, LAN/WAN, firewall, connectivity</td><td class="num">22</td></tr>
-    <tr><td colspan="3"><b>Pillar tags in total</b></td><td class="num"><b>251</b></td></tr>
+    <tr><td>Systems</td><td>Foundation</td><td>IFMIS, ERP, application system, audit trail</td><td class="num">294</td></tr>
+    <tr><td>Infrastructure</td><td>Operational</td><td>server, data centre, backup, disaster recovery</td><td class="num">160</td></tr>
+    <tr><td>Security</td><td>Governance</td><td>IT security, access control, authentication</td><td class="num">87</td></tr>
+    <tr><td>Network</td><td>Connectivity</td><td>network, LAN/WAN, firewall, connectivity</td><td class="num">60</td></tr>
+    <tr><td colspan="3"><b>Pillar tags in total</b></td><td class="num"><b>601</b></td></tr>
   </table></div>
   <div class="prose">
     <p>A finding can carry more than one tag. An ERP-governance finding, for example, can be tagged both Security and Systems. So the pillar counts add up to more than the number of findings behind them:</p>
     <ul>
-      <li><b>212</b> unique findings (4.8% of 4,406) carry at least one digital-pillar tag.</li>
-      <li><b>33</b> of those carry more than one tag, adding <b>39</b> extra tags.</li>
-      <li>212 + 39 = <b>251</b> pillar tags.</li>
-      <li>The remaining 4,194 findings (95.2%) match no pillar keyword and are grouped as &ldquo;Other&rdquo;: financial and governance findings. That is expected, since OAG audits are financial-statement audits, not IT audits.</li>
+      <li><b>484</b> unique findings (6.1% of 7,972) carry at least one digital-pillar tag.</li>
+      <li><b>91</b> of those carry more than one tag, adding <b>117</b> extra tags.</li>
+      <li>484 + 117 = <b>601</b> pillar tags.</li>
+      <li>The remaining 7,488 findings (93.9%) match no pillar keyword and are grouped as &ldquo;Other&rdquo;: financial and governance findings. That is expected, since OAG audits are financial-statement audits, not IT audits.</li>
     </ul>
     <p>Keyword tagging is a signal, not a validated classification. Treat these counts as a floor for how often digital risk appears in the audit record, not as a measured prevalence.</p>
   </div>
@@ -326,51 +335,52 @@
   <h2>Same problem.<br>Next audit.</h2>
   <p class="section-lead">RETACH's Cyber Risk Quantification (CRQ) Engine estimates Expected Annual Loss as EAL = &Sigma;(frequency &times; severity). This dataset supplies frequency-side evidence only. Severity (what each type of finding costs) is a separate component, not yet built.</p>
   <div class="prose">
-    <p><b>Measure 1: self-reported (19.8%).</b> The share of the 4,406 findings where the auditor's own wording points to a prior-year issue, with phrases like &ldquo;as previously reported&rdquo; or &ldquo;similar observation was made in the prior year.&rdquo; It only counts when the auditor chose to cross-reference, so it undercounts.</p>
-    <p><b>Measure 2: content-matched (25.6%).</b> Does the same underlying issue persist for the same entity across audit years, whether or not the auditor said so? The method:</p>
+    <p><b>Measure 1: self-reported (14.9%).</b> The share of the 7,972 findings where the auditor's own wording points to a prior-year issue, with phrases like &ldquo;as previously reported&rdquo; or &ldquo;similar observation was made in the prior year.&rdquo; It only counts when the auditor chose to cross-reference, so it undercounts.</p>
+    <p><b>Measure 2: content-matched (29.7%).</b> Does the same underlying issue persist for the same entity across audit years, whether or not the auditor said so? The method:</p>
     <ol>
       <li>Within each entity, normalise every finding title by stripping numbers, amounts and generic audit boilerplate.</li>
       <li>Compare titles from <i>different</i> financial years. Link any pair with at least 50% word overlap (Jaccard similarity &ge; 0.5).</li>
       <li>Group linked findings into &ldquo;issue threads&rdquo;: chains of the same problem across years.</li>
       <li>Exclude titles dominated by currency figures. One mis-parsed reconciliation table initially produced five false &ldquo;recurring findings&rdquo; before this guard was added; they were removed after manual review.</li>
     </ol>
-    <p>Result: <b>458 issue threads across 243 entities</b>, containing <b>1,126 findings (25.6%)</b>. 341 of those threads run in consecutive years with no clean year in between, which is the stronger signal.</p>
+    <p>Result: <b>908 issue threads across 240 entities</b>, containing <b>2,366 findings (29.7%)</b>. 681 of those threads run in consecutive years with no clean year in between, which is the stronger signal.</p>
   </div>
   <div class="table-wrap"><table>
     <tr><th>Years the same issue recurred</th><th>Threads</th></tr>
-    <tr><td>2 years</td><td class="num">330</td></tr>
-    <tr><td>3 years</td><td class="num">97</td></tr>
-    <tr><td>4 years</td><td class="num">21</td></tr>
-    <tr><td>5 years</td><td class="num">8</td></tr>
-    <tr><td>6 years</td><td class="num">2</td></tr>
-    <tr><td><b>Total</b></td><td class="num"><b>458</b></td></tr>
+    <tr><td>2 years</td><td class="num">627</td></tr>
+    <tr><td>3 years</td><td class="num">171</td></tr>
+    <tr><td>4 years</td><td class="num">78</td></tr>
+    <tr><td>5 years</td><td class="num">20</td></tr>
+    <tr><td>6 years</td><td class="num">7</td></tr>
+    <tr><td>7 years</td><td class="num">5</td></tr>
+    <tr><td><b>Total</b></td><td class="num"><b>908</b></td></tr>
   </table></div>
   <div class="honesty-banner">
-    <b>Neither 19.8% nor 25.6% is a validated actuarial coefficient.</b> Making either one a defensible EAL input still needs entity-level normalisation, time-decay weighting, and testing against a held-out sample. Only 18 of the 458 threads tag to a S.I.N.S. pillar; the named examples on the <a href="/#methodology" style="color:var(--green-dark);">main page</a> are a proof-of-concept slice, not a prevalence rate for digital-risk recurrence.
+    <b>Neither 14.9% nor 29.7% is a validated actuarial coefficient.</b> Making either one a defensible EAL input still needs entity-level normalisation, time-decay weighting, and testing against a held-out sample. Only 46 of the 908 threads tag to a S.I.N.S. pillar; the named examples on the <a href="/#methodology" style="color:var(--green-dark);">main page</a> are a proof-of-concept slice, not a prevalence rate for digital-risk recurrence.
   </div>
 </section>
 
 <section id="tiers">
   <div class="section-eyebrow">6 &middot; Entity Coverage Tiers</div>
   <h2>How much digital<br>evidence per entity.</h2>
-  <p class="section-lead">To decide how deep entity-level profiles can go, each of the 562 entities is placed in a tier by how many digital-tagged findings it has in the register.</p>
+  <p class="section-lead">To decide how deep entity-level profiles can go, each of the 570 entities is placed in a tier by its digital findings. Tier A needs three or more digital findings that were checked by hand against the source report and confirmed; tagged-only findings do not count towards Tier A.</p>
   <div class="table-wrap"><table>
     <tr><th>Tier</th><th>Rule</th><th>Entities</th></tr>
-    <tr><td><b>A</b> &middot; Substantial</td><td>3 or more digital-tagged findings</td><td class="num">21</td></tr>
-    <tr><td><b>B</b> &middot; Limited</td><td>1&ndash;2 digital-tagged findings</td><td class="num">108</td></tr>
-    <tr><td><b>C</b> &middot; None</td><td>No digital-tagged findings (352 with other findings, 81 with no findings at all)</td><td class="num">433</td></tr>
-    <tr><td colspan="2"><b>Total</b></td><td class="num"><b>562</b></td></tr>
+    <tr><td><b>A</b> &middot; Substantial</td><td>3 or more confirmed digital findings (69 entities have 3 or more tagged findings; 48 reach 3 after the hand check)</td><td class="num">48</td></tr>
+    <tr><td><b>B</b> &middot; Limited</td><td>1 or more digital-tagged findings, fewer than 3 confirmed (includes 21 entities with 3 or more tagged findings that did not reach 3 confirmed)</td><td class="num">155</td></tr>
+    <tr><td><b>C</b> &middot; None</td><td>No digital-tagged findings (314 with other findings, 53 with no findings at all)</td><td class="num">367</td></tr>
+    <tr><td colspan="2"><b>Total</b></td><td class="num"><b>570</b></td></tr>
   </table></div>
   <p class="pillar-note">A tier reflects how much keyword-tagged audit evidence exists, not how risky an entity is. Tier C does not mean &ldquo;no digital risk&rdquo;: it means the OAG record we hold doesn't surface it. Entities audited in fewer years have less chance to reach Tier A.</p>
 </section>
 
 <section id="limitations" style="background:var(--white);border-top:1px solid var(--gray-border);border-bottom:1px solid var(--gray-border);">
   <div class="section-eyebrow">7 &middot; Additional Limitations</div>
-  <h2>Two more gaps<br>worth knowing.</h2>
-  <p class="section-lead">The main page lists the network false-positive risk, the scanned-file gap, year-mismatch drift and truncation. <a href="/#limitations" style="color:var(--green-dark);">See those here.</a> Two more apply:</p>
+  <h2>More gaps<br>worth knowing.</h2>
+  <p class="section-lead">The main page lists the network false-positive risk, OCR accuracy, keyword tagging precision and year coverage. <a href="/#limitations" style="color:var(--green-dark);">See those here.</a> More apply:</p>
   <div class="callout">
     <div class="callout-title">Entity-name spelling variants</div>
-    <p>11 confirmed cases of the same entity appearing under slightly different names across years (e.g. &ldquo;Regional Centre on Groundwater Resource&rdquo; vs. &ldquo;&hellip;Resources&rdquo;). Left unmerged on purpose: merging without manual confirmation risks combining two different entities.</p>
+    <p>Spelling variants of the same entity are merged using a hand-reviewed name map (75 merge groups). Variants not yet in the map can still split one entity into two, which lowers its count; the map is extended when a gap is found (the Ewaso Ng&rsquo;iro and Kenya Electricity Transmission Company variants were added for this version).</p>
   </div>
   <div class="callout">
     <div class="callout-title">Recurrence-thread precision</div>
@@ -378,7 +388,7 @@
   </div>
   <div class="callout">
     <div class="callout-title">Tier A source-verification precision</div>
-    <p>Digital-finding tags were checked by hand against the source OAG reports for the 21 highest-count entities: 79% of tagged findings (59 of 75) were confirmed; 14 further digital findings the tagger missed were found in the same reports. Most false positives were findings about the accounting treatment of ICT assets rather than ICT control failures. One row (Technical and Vocational Education and Training Authority, FY2022/23) could not be checked &mdash; its source report is a scanned image with no extractable text. Missed findings were searched only within reports already reviewed.</p>
+    <p>Digital-tagged findings in Tier A candidates were checked by hand against the source OAG reports in two rounds: 296 rows reviewed, 205 confirmed (69.3%; 117 of 165 in the first round, 88 of 131 in the second). Most false positives were findings about the accounting treatment of ICT assets or general governance rather than ICT control failures. Verdicts rest on the register text and the nearest source passage; a full-text read of the source was done for a subset of rows. Findings the tagger missed were searched only within reports already reviewed.</p>
   </div>
 </section>
 
@@ -387,10 +397,10 @@
   <h2>Tested before<br>it ships.</h2>
   <div class="prose">
     <ul>
-      <li>Every parser update (v3.6, v3.7, v3.8) was regression-tested against a 40-file, hand-validated baseline before running on the full corpus.</li>
+      <li>Parser updates v3.6, v3.7 and v3.8 were regression-tested against a 40-file, hand-validated baseline before running on the full corpus.</li>
       <li>Automated checks cover: placeholder rows, scanned and year-mismatch rates against known baselines, pillar-distribution sanity, duplicate rows, garbled entity names, and per-file finding-count outliers.</li>
       <li>After v3.8, a stratified manual sample of 171 rows (about 3.5&ndash;5% of the register) was reviewed line by line against the source reports. It found zero regressions and no recurrence of previously fixed defect types.</li>
-      <li>The 15 duplicate downloads were resolved with a documented reason for each (see <a href="#corpus" style="color:var(--green-dark);">section 1</a>).</li>
+      <li>Version 4.0 Tier A candidates were hand-checked against the source reports (see <a href="#limitations" style="color:var(--green-dark);">section 7</a>), and all 48 published profiles cite findings checked this way.</li>
     </ul>
   </div>
 </section>
@@ -399,7 +409,7 @@
   <div class="section-eyebrow">9 &middot; How to Cite &amp; Data Access</div>
   <h2>Using this data.</h2>
   <p class="section-lead" style="margin-bottom:16px;">If you quote figures from the index, please cite it as:</p>
-  <div class="cite-box">RETACH Digital Ltd. (2026). <i>Kenya Digital Risk Index: OAG Kenya Findings Register</i> (Version 3.8) [Data set]. https://kdri.retach.ke/</div>
+  <div class="cite-box">RETACH Digital Ltd. (2026). <i>Kenya Digital Risk Index: OAG Kenya Findings Register</i> (Version 4.0) [Data set]. https://kdri.retach.ke/</div>
   <p class="pillar-note" style="margin-bottom:28px;">Please quote the version number. Figures can change between register versions.</p>
   <div class="prose">
     <p><b>What's public.</b> The aggregate statistics on this site and in <a href="/register_public_v38_stats.json" style="color:var(--green-dark);">register_public_v38_stats.json</a>.</p>
